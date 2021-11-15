@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.UserSection {
+	display: flex;
+	justify-content: space-evenly;
+} */
+.App {
+	text-align: center;
+}
+
+.UserSection {
+	display: flex;
+	justify-content: space-evenly;
 }

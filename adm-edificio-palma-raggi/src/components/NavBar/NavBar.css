@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	justify-content: center;
+	background-color: green;
+}
+
+.container ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+li {
+	margin: 20px;
+	list-style-type: none;
+}
+
+.nav-enlace{
+    display: inline-block;
+    background-color:green;
+    color:#fff;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+.nav-enlace:hover{
+    background-color:greenyellow;
+}
+nav{
+    background-color:green;
+    padding: 10px;
+}
