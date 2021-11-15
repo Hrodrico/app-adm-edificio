@@ -1,13 +1,13 @@
 import React from 'react'
-import { Header, Segment } from 'semantic-ui-react'
+import { Header, Segment, Icon } from 'semantic-ui-react'
 
 const HeaderFloating = () => (
   <Segment clearing>
     <Header as='h2' floated='right'>
-      Float Right
+	<Icon name='user'/>Log in
     </Header>
     <Header as='h2' floated='left'>
-      Float Left
+      Admin Deptos
     </Header>
   </Segment>
 )
