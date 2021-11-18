@@ -3,12 +3,8 @@ import { Header, Segment, Icon } from 'semantic-ui-react'
 
 const HeaderFloating = () => (
   <Segment clearing>
-    <Header as='h2' floated='right'>
-	<Icon name='user'/>Log in
-    </Header>
-    <Header as='h2' floated='left'>
-      Admin Deptos
-    </Header>
+    {/* <Header as='h4' floated='left'>Bienvenido a Min-Deptos!!!</Header> */}
+    <Header as='h4' floated='right'><Icon name='user'/>Log in</Header>
   </Segment>
 )
 

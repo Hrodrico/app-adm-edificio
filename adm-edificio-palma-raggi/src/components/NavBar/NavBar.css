@@ -1,7 +1,7 @@
 .container {
-	display: flex;
-	justify-content: center;
+	display: flex;	
 	background-color: green;
+    justify-content: center;
 }
 
 .container ul {
@@ -22,9 +22,21 @@ li {
     padding: 10px 30px;
     text-decoration: none;
 }
-.nav-enlace:hover{
+
+.nav-enlace-cart{
+    display: inline-block;
+    background-color:green;
+    color:#fff;
+    padding: 10px 30px;
+    justify-content: right;
+}
+
+
+.nav-enlace:hover, .nav-enlace-cart:hover{
     background-color:greenyellow;
 }
+
+
 nav{
     background-color:green;
     padding: 10px;

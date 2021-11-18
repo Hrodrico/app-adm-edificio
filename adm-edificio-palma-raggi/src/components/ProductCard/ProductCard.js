@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 
-import './UserCard.css';
+import './ProductCard.css';
 
-const UserCard = ({ img, name, date, description }) => (
-	<div className='UserCard'>
+const ProductCard = ({ img, name, date, description }) => (
+	<div className='ProductCard'>
 		<Card>
 			<Image src={img} wrapped ui={false} />
 			<Card.Content>
@@ -18,4 +18,4 @@ const UserCard = ({ img, name, date, description }) => (
 	</div>
 );
 
-export default UserCard;
+export default ProductCard;

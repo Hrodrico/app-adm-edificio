@@ -1,17 +1,19 @@
 import './NavBar.css';
 import { Icon } from 'semantic-ui-react';
+import CartWidget from '../CartWidget/CartWidget'
 
-// import Nosotros from '../Nosotros/Nosotros';
-// import Servicio from '../Servicio/Servicio';
-// import Contacto from '../Contacto/Contacto';
+// import us from '../Nosotros/Nosotros';
+// import service from '../Servicio/Servicio';
+// import contact from '../Contacto/Contacto';
 
 const NavBar = () => {
 	return (
 		<nav className='container'>
-			<a href="/" class="nav-enlace"><Icon name='home'/>Inicio</a>
-            <a href="/nosotros" class="nav-enlace"><Icon name='users'/>Nosotros</a>
-            <a href="/servicio" class="nav-enlace"><Icon name='box'/>Servicio</a>
-            <a href="/contacto" class="nav-enlace"><Icon name='mail'/>Contacto</a>
+			<a href="/" className="nav-enlace"><Icon name='home'/>Inicio</a>
+            <a href="/us" className="nav-enlace"><Icon name='users'/>Nosotros</a>
+            <a href="/service" className="nav-enlace"><Icon name='box'/>Servicio</a>
+            <a href="/contact" className="nav-enlace"><Icon name='mail'/>Contacto</a>
+			<a href="/cart" className="nav-enlace-cart"><CartWidget/> </a>
 		</nav>
 	);
 };
