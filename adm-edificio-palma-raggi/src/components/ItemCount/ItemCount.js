@@ -14,7 +14,7 @@ function ItemCount ({stock=0, initial=0})  {
 		    setCounter(+counter + 1);
         }else{
             Toast.fire({
-                icon: 'error',
+                icon: 'warning',
                 title: 'No hay más stock'
                 })
         }
