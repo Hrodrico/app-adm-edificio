@@ -1,10 +1,15 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 
-export default function ItemListContainer({greeting}) {
+function ItemListContainer({greeting}) {
     return (
-        // <div className="greeting">
-        <div style={{color:"green", margin:"25px",fontSize: "2rem", alignContent:"center"}}>
-            {greeting}
-        </div>
+        <>
+            <div style={{color:"green", margin:"25px",fontSize: "2rem", alignContent:"center"}}>
+                {greeting}
+            </div>
+            <ItemCount stock="7" initial="2"/> 
+        </>
     )
 }
+
+export default ItemListContainer;

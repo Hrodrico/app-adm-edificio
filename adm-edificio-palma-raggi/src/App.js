@@ -8,8 +8,6 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ProductCard from './components/ProductCard/ProductCard';
 
 
-
-
 class App extends Component {
 	render() {
 		return (
@@ -38,8 +36,9 @@ class App extends Component {
 						description='Oficina de propiedades ofrece hermosa casa en condominio ubicada en la comuna de Huechuraba, cuenta con seguridad las 24 horas, áreas verdes, sector tranquilo, amplias calles de acceso, cercana a colegios, supermercados, mall y autopistas.
 						Tramitamos crédito hipotecario en diferentes bancos, obteniendo la mejor opción para su compra.'
 						img='https://http2.mlstatic.com/D_NQ_NP_854005-MLC47792570749_102021-O.webp'
-					/>
+					/>					
 				</div>
+				
 			</div>
 		);
 	}
