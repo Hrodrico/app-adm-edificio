@@ -1,0 +1,26 @@
+.item-section-stock{
+    font-weight: bold;
+}
+
+.itemSection {
+    flex: 1;
+    flex-direction: 'row';
+    justify-content: 'center';
+    align-items: 'center';    
+}
+
+.icon {
+    padding: 10;
+    size: 30px;
+}
+
+.input {
+    flex: 1;
+    align-content: 'center';
+    padding-top: 10;
+    padding-right: 10;
+    padding-bottom: 10;
+    padding-left: 0;
+    background-color: '#fff';
+    color: '#424242';
+}
