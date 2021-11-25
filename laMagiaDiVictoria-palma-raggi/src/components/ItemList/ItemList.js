@@ -20,6 +20,10 @@ const ItemList = () => {
                 // console.log("json::",json.drinks);
                 setProducts(json.drinks);
             })
+            .catch((error) => {
+                console.error(error);
+                throw error;
+            })
     }, [search])
 
     const activeSearch = (event) => {
@@ -35,11 +39,14 @@ const ItemList = () => {
             </div>             
             <div className="item-list">                
                 {
-                    products.map(product => {
-                        return (
-                            <Item product={product} />
-                        )
-                    })
+                    products ? (
+                        products.map(product => {
+                            return (
+                                <Item product={product} />
+                            )
+                        })
+                    )
+                    : "No se encontro resultado"
                 }
             </div>
         </>
