@@ -10,10 +10,10 @@ const NavBar = () => {
 	return (
 		<nav className='container'>
 			<a href="/" className="nav-enlace"><Icon name='home'/>Inicio</a>
-            <a href="/us" className="nav-enlace"><Icon name='users'/>Nosotros</a>
-            <a href="/service" className="nav-enlace"><Icon name='box'/>Servicio</a>
-            <a href="/contact" className="nav-enlace"><Icon name='mail'/>Contacto</a>
-			<a href="/cart" className="nav-enlace-cart"><CartWidget/> </a>
+            <a href="/" className="nav-enlace"><Icon name='users'/>Nosotros</a>
+            <a href="/" className="nav-enlace"><Icon name='box'/>Servicio</a>
+            <a href="/" className="nav-enlace"><Icon name='mail'/>Contacto</a>
+			<a href="/" className="nav-enlace-cart"><CartWidget/> </a>
 		</nav>
 	);
 };

@@ -1,7 +1,8 @@
 .container {
 	display: flex;	
-	background-color: green;
+	background-color:black;
     justify-content: center;
+    padding: 10px;
 }
 
 .container ul {
@@ -16,16 +17,14 @@ li {
 }
 
 .nav-enlace{
-    display: inline-block;
-    background-color:green;
+    display: inline-block;    
     color:#fff;
     padding: 10px 30px;
     text-decoration: none;
 }
 
 .nav-enlace-cart{
-    display: inline-block;
-    background-color:green;
+    display: inline-block;    
     color:#fff;
     padding: 10px 30px;
     justify-content: right;
@@ -33,11 +32,7 @@ li {
 
 
 .nav-enlace:hover, .nav-enlace-cart:hover{
-    background-color:greenyellow;
+    background-color:white;
 }
 
 
-nav{
-    background-color:green;
-    padding: 10px;
-}

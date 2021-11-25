@@ -9,9 +9,9 @@ import ProductCard from './components/ProductCard/ProductCard';
 
 //Img
 import logo from './assets/images/magia_di_victoria.png'
-import honey_mask from './assets/images/p_honey_mask.jpeg'
-import hand_spray from './assets/images/p_antibacterial_hand_spray.jpeg'
-import billetera from './assets/images/p_billetera.jpeg'
+// import honey_mask from './assets/images/p_honey_mask.jpeg'
+// import hand_spray from './assets/images/p_antibacterial_hand_spray.jpeg'
+// import billetera from './assets/images/p_billetera.jpeg'
 
 class App extends Component {
 	render() {
@@ -19,8 +19,8 @@ class App extends Component {
 			<div className='App'>
 				<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
 				<NavBar /> 
-				<ItemListContainer greeting="Bienvenido a Min-Deptos!!!"/>
-				<div className='UserSection'>
+				<ItemListContainer greeting="Bienvenid@!!!"/>
+				{/* <div className='UserSection'>
 					<ProductCard
 						name='Antibacterial Hand Spray'
 						date='24-Nov-2021'
@@ -39,7 +39,7 @@ class App extends Component {
 						description='Billeteras Victoria Secret`s'
 						img={billetera}
 					/>					
-				</div>
+				</div> */}
 				
 			</div>
 		);
