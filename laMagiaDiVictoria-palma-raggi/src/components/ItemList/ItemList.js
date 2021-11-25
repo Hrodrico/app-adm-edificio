@@ -30,8 +30,8 @@ const ItemList = () => {
     return (
         <>
             <div id="input-container">
-                <input type="text" onChange={activeSearch} value={search} placeholder="Margarita"/>
-                <Icon name='search' id="input-img"/>
+                <input className="input" type="text" onChange={activeSearch} value={search} placeholder="Buscar ejm. Margarita"/>
+                <Icon name='search' />
             </div>             
             <div className="item-list">                
                 {
