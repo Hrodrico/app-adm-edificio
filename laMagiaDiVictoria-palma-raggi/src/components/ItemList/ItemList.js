@@ -13,17 +13,20 @@ const ItemList = () => {
     // console.log("API::",process.env.REACT_APP_API_URL);
     // console.log("API::",API);
     useEffect(() => {
-        // fetch(process.env.REACT_APP_API_URL)
-        fetch(`${API}${search}`)
-            .then(response => response.json())
-            .then(json => {
-                // console.log("json::",json.drinks);
-                setProducts(json.drinks);
-            })
-            .catch((error) => {
-                console.error(error);
-                throw error;
-            })
+        // Delay 2 seg. por consigna
+        setTimeout(() => {
+            //Consume API en enviroment
+            fetch(`${API}${search}`)
+                .then(response => response.json())
+                .then(json => {
+                    // console.log("json::",json.drinks);
+                    setProducts(json.drinks);
+                })
+                .catch((error) => {
+                    console.error('Error: ', error);
+                    throw error;
+                })
+        }, 2000)
     }, [search])
 
     const activeSearch = (event) => {
