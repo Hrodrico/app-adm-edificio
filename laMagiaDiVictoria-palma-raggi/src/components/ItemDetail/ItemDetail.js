@@ -1,11 +1,12 @@
 import React from 'react'
-import './Item.css';
+import './ItemDetail.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
 
-function Item({product}) {
+function ItemDetailContainer({product}) {
+    // console.log("product::",product);
     const { strDrink, strInstructions, dateModified, idDrink, strDrinkThumb } = product;
-    
+
     return (
         <div className='item'>
             <Card>
@@ -22,4 +23,4 @@ function Item({product}) {
     )
 }
 
-export default Item
+export default ItemDetailContainer

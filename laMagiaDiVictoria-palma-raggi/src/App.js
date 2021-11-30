@@ -5,7 +5,7 @@ import './App.css';
 import HeaderFloating from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ProductCard from './components/ProductCard/ProductCard';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 //Img
 import logo from './assets/images/magia_di_victoria.png'
@@ -18,28 +18,9 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
-				<NavBar /> 
-				<ItemListContainer greeting="Bienvenid@!!!"/>
-				{/* <div className='UserSection'>
-					<ProductCard
-						name='Antibacterial Hand Spray'
-						date='24-Nov-2021'
-						description='Spray antibacterial'
-						img={hand_spray}
-					/>
-					<ProductCard
-						name='Honey Mask'
-						date='24-Nov-2021'
-						description='Mascarilla, limpia y exfolia, todo en uno. Incluye menta, cáscara de limón y miel para nutrir y suavizar en un solo paso refrescante. Usar en la cara y el cuerpo para un tratamiento de pies a cabeza.'
-						img={honey_mask}
-					/>
-					<ProductCard
-						name='Billetera Victoria Secret`s'
-						date='24-Nov-2021'
-						description='Billeteras Victoria Secret`s'
-						img={billetera}
-					/>					
-				</div> */}
+				<NavBar/> 
+				{/* <ItemListContainer greeting="Bienvenid@!!!"/> */}
+				<ItemDetailContainer uid="11007" />
 				
 			</div>
 		);
