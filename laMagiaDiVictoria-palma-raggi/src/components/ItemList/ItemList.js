@@ -4,10 +4,11 @@ import './ItemList.css';
 import { Icon } from 'semantic-ui-react'
 import ReactLoading from 'react-loading'; 
 
-const ItemList = () => {
+const ItemList = ({categoryId}) => {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
     const [done , setDone] = useState(undefined);
+    
     //Invoca API desde enviroment
     const API = process.env.REACT_APP_API_URL; 
 
@@ -15,6 +16,11 @@ const ItemList = () => {
     // console.log("API::",API);
     useEffect(() => {
         // Delay 2 seg. por consigna
+        console.log("categoryId::",{categoryId});
+        if({categoryId}.length > 0){
+            setSearch(categoryId);
+        }
+        
         setTimeout(() => {
             //Consume API en enviroment
             fetch(`${API}${search}`)
@@ -29,7 +35,7 @@ const ItemList = () => {
                     console.error('Error: ', error);
                     throw error;
                 })
-        }, 2000)
+        }, 1000)
     }, [search]) 
 
     const activeSearch = (event) => {
@@ -40,7 +46,7 @@ const ItemList = () => {
     return (
         <>
             <div id="input-container">
-                <input className="input" type="text" onChange={activeSearch} value={search} placeholder="Buscar ejm. Margarita"/>
+                <input className="input" type="text" onChange={activeSearch} value={search} placeholder="Buscar ejm. Tequila"/>
                 <Icon name='search' />
             </div>             
                
