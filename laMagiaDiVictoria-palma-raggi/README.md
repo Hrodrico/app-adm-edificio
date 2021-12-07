@@ -41,8 +41,8 @@ ES: Clonar repositorio. Se necesatará 'node' y 'npm' instalados globalmente en 
 --Crea la aplicación en producción en la carpeta build. Agrupa correctamente React en el modo de producción y optimiza la compilación para obtener el mejor rendimiento. La compilación se minimiza y los nombres de archivo incluyen los hash. ¡Tu aplicación está lista para implementarse!. Mira la sección [deployment](https://facebook.github.io/create-react-app/docs/deployment) para más información.
 ### `npm run build`
 
-### App Screenshots / Print de Pantalla del App ###
-magiaDiVictoria.gif
+### App Screenshots / Video de App ###
+magiaDiVictoria.mov
 
 
 ### Dependencies / Dependencias ###
