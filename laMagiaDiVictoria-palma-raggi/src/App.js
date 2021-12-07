@@ -4,7 +4,8 @@ import './App.css';
 
 // Components
 import HeaderFloating from './components/Header/Header';
-import NavBar from './components/NavBar/NavBar'; 
+// import NavBar from './components/NavBar/NavBar'; 
+import NavBar2 from './components/NavBar/NavBar2'; 
 // import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
@@ -25,11 +26,12 @@ class App extends Component {
 			<>
 				<Router>
 					<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
-					<NavBar/> 
+					{/* <NavBar/>  */}
+					<NavBar2/>
+					
 					<Routes>
 						<Route exact path='/' element={<Home />} ></Route>
-						<Route exact path='/categorys/:categoryId' element={<Categorys />} ></Route>
-						<Route exact path='/category/:categoryId' element={<Category />} ></Route>
+						<Route exact path='/category/:categoryId' element={<Categorys />} ></Route>
 						<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
 						{/* <ItemDetailContainer uid="11007" /> */}
 					</Routes>
