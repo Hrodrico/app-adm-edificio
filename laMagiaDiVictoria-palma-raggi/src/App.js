@@ -8,10 +8,10 @@ import HeaderFloating from './components/Header/Header';
 import NavBar2 from './components/NavBar/NavBar2'; 
 // import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartWidget from './components/CartWidget/CartWidget'
 
 //Views[MENU]
 import Home from './views/Home';
-import Categorys from './views/Categorys'
 import Category from './views/Category'
 
 //Img
@@ -31,8 +31,9 @@ class App extends Component {
 					
 					<Routes>
 						<Route exact path='/' element={<Home />} ></Route>
-						<Route exact path='/category/:categoryId' element={<Categorys />} ></Route>
+						<Route exact path='/category/:categoryId' element={<Category />} ></Route>
 						<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
+						<Route exact path='/cart' element={<CartWidget />} ></Route>
 						{/* <ItemDetailContainer uid="11007" /> */}
 					</Routes>
 				</Router>

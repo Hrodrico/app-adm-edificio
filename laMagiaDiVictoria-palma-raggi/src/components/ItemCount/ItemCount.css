@@ -1,8 +1,14 @@
+.item-content {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+  }
+
 .item-section-stock{
     font-weight: bold;
 }
 
-.itemSection {
+.item-section {
     flex: 1;
     flex-direction: 'row';
     justify-content: 'center';
@@ -10,8 +16,10 @@
 }
 
 .icon {
-    padding: 10;
-    size: 30px;
+    /* padding: 10;
+    size: 30px; */
+    font-size: 20px;
+    color: #00a160;
 }
 
 .input {
@@ -24,3 +32,16 @@
     background-color: '#fff';
     color: '#424242';
 }
+.item-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #fff;
+    width: 20%;
+    font-size: 24px;
+}
+
+.item-button:hover {
+  cursor: pointer;
+}
+

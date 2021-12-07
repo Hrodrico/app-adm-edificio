@@ -1,10 +1,11 @@
 import React from 'react'
 import { FiShoppingCart } from "react-icons/fi";
 
-function CartWidget () {
+function CartWidget ({qty}) {
     return (
         <div>
-            <FiShoppingCart/>
+            <h1>Tus productos seleccioandos <FiShoppingCart/> </h1>
+            Productos: {qty}
         </div>
     )
 }

@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2'
-import { BsFillPlusCircleFill } from "react-icons/bs";
-import { AiOutlineMinusCircle } from "react-icons/ai";
+// import { BsFillPlusCircleFill } from "react-icons/bs";
+// import { AiOutlineMinusCircle } from "react-icons/ai";
+import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 
 
-
-function ItemCount ({stock=0, initial=0})  {    
+function ItemCount ({stock=0, initial=0, onAdd})  {    
     const [counter, setCounter] = useState(initial);
 
     const handlerCounterUp = () => {
-        
-        if(counter < stock){
+        if(counter < stock)
 		    setCounter(+counter + 1);
-        }else{
+        else
             Toast.fire({
                 icon: 'warning',
                 title: 'No hay más stock'
                 })
-        }
+        
 	};
 
 	const handlerCounterDown = () => {
         if(counter > 0)
 		    setCounter(+counter - 1);
-        else{
+        else
             Toast.fire({
                 icon: 'error',
                 title: 'Stock, debe ser mayor a 0'
                 })
-        }
+        
 	};
 
     const handlerAddCart = () => {
-		console.log("handlerAddCart");
+		console.log("Btn:: Agregar a carrito");
+        console.log("initial::",initial);
+        console.log("counter::",counter);
+        setCounter(initial)
+        onAdd(counter)
         
 	};
 
@@ -49,17 +52,19 @@ function ItemCount ({stock=0, initial=0})  {
       })
 
     return (
-        <>
+        <div className="item-content">            
             <div className="item-section-stock">            
                 Stock Disponible: { stock }
             </div>
-            <div className="itemSection">            
-                <AiOutlineMinusCircle className="icon" onClick={handlerCounterDown}/>
+
+            <div className="item-section">    
+                <button className="item-button" onClick={handlerCounterDown}><HiOutlineMinus className="icon"/></button>
                 <input type="text" className="input" id="input" defaultValue={initial} value={counter} placeholder="Contador"/>
-                <BsFillPlusCircleFill className="icon" onClick={handlerCounterUp}/>
-            </div>            
-            <button onClick={handlerAddCart}>Agregar al Carrito</button>
-        </>
+                <button className="item-button" onClick={handlerCounterUp}><HiOutlinePlusSm className="icon"/></button>
+            </div>        
+
+            { counter > 0 && <button onClick={handlerAddCart}>Agregar a Carro</button> }
+        </div>
         
     )
 }

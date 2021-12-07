@@ -37,10 +37,10 @@ class NavBar2 extends Component {
             </Dropdown>
             
             <Menu.Menu position='right'>
-                <NavLink to="/carro">
+                <NavLink to="/cart">
                     <Menu.Item
-                        name='carro'
-                        active={activeItem === 'carro'}
+                        name='cart'
+                        active={activeItem === 'cart'}
                         onClick={this.handleItemClick}
                     >
                         <Icon name='cart'/>
