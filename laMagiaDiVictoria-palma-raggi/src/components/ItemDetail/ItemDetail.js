@@ -2,10 +2,19 @@ import React from 'react'
 import './ItemDetail.css';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
+// import ItemCount from '../ItemCount/ItemCount';
 
 function ItemDetailContainer({product}) {
     // console.log("product::",product);
     const { strDrink, strInstructions, dateModified, idDrink, strDrinkThumb } = product;
+    // const [changeButton, setChangeButton] = useState(false);
+    // cont { addToCart } = useCartContext();
+
+    // const onAdd = (qty) =>{
+    //     addToCart(product, qty);
+    //     setChangeButton(true);
+    //     console.log("::Producto Agregado::",qty);
+    // };
 
     return (
         <div className='item'>
