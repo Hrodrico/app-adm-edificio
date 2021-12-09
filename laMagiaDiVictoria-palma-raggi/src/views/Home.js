@@ -3,9 +3,11 @@ import React from 'react'
 
 
 function Home() {
+    const greeting = process.env.REACT_APP_GREETING; 
+
     return (
         <>
-            <ItemListContainer greeting="Bienvenid@!!!"/>
+            <ItemListContainer greeting={greeting}/>
         </>
     )
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Item from '../Item/Item';
-import './ItemList.css';
 import { Icon } from 'semantic-ui-react'
 import ReactLoading from 'react-loading'; 
+import Item from '../Item/Item';
+import './ItemList.css';
 
 const ItemList = ({categoryId}) => {
     const [search, setSearch] = useState('');
@@ -12,8 +12,6 @@ const ItemList = ({categoryId}) => {
     //Invoca API desde enviroment
     const API = process.env.REACT_APP_API_URL; 
 
-    // console.log("API::",process.env.REACT_APP_API_URL);
-    // console.log("API::",API);
     useEffect(() => {
         // Delay 2 seg. por consigna
         console.log("categoryId::",{categoryId});
@@ -44,31 +42,28 @@ const ItemList = ({categoryId}) => {
       }
 
     return (
-        <>
-            <div id="input-container">
-                <input className="input" type="text" onChange={activeSearch} value={search} placeholder="Buscar ejm. Tequila"/>
-                <Icon name='search' />
-            </div>             
-               
-                {
-                    !done ? (   
-                        <div className="loading"><ReactLoading type={"spinningBubbles"} color={"#000"}/> </div>
-                    ) : (
-                        <div className="item-list">
-                            {
-                                products ? (
-                                    products.map(product => {
-                                        return (
-                                            <Item product={product} />
-                                        )
-                                    })
-                                ) : ("No se encontro resultado")
-                            }
-                        </div>
-                    )
-                }
+            !done ? (   
+                <div className="loading"><ReactLoading type={"spinningBubbles"} color={"#000"}/> </div>
+            ) : (
+                <>
+                    <div className="input-container">
+                        <Icon name='search' className="icon"/>
+                        <input type="text" onChange={activeSearch} value={search} placeholder="Buscar Tequila"/>
+                    </div>  
+                    <div className="item-list">
+                        {
+                            products ? (
+                                products.map(product => {
+                                    return (
+                                        <Item product={product} />
+                                    )
+                                })
+                            ) : ("No se encontro resultado")
+                        }
+                    </div>
+                </>
+            )
             
-        </>
     )
 }
 

@@ -3,9 +3,13 @@ import { FiShoppingCart } from "react-icons/fi";
 
 function CartWidget ({qty}) {
     return (
-        <div>
-            <h1>Tus productos seleccioandos <FiShoppingCart/> </h1>
-            Productos: {qty}
+        <div className="item-contener">
+            <h1>Mi Carro <FiShoppingCart/> </h1>
+            <div>
+                --Productos seleccionados-- 
+                {qty}
+            </div>
+            
         </div>
     )
 }

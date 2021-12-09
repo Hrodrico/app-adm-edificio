@@ -2,29 +2,48 @@
     display: flex;
     flex-wrap: wrap;
 }
-.input-container {
-    position:relative;
-    padding:0 0 0 20px;
-    margin:0 20px;
-    background:#ddd;
-    direction: rtl;
-    width: 300px;
-}
-.input {
-    height:20px;
-    margin:0;
-    padding-right: 30px;
-}
-.input-img {
-    position:absolute;
-    bottom:2px;
-    right:5px;
-    width:24px;
-    height:24px;
-}
+
 .loading {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
 }
+
+
+.input-container {
+    margin: 0 0 0 2em;
+    position: relative;
+  }
+  
+.input-container > .icon {
+    position: absolute;
+    top: 2px;
+    left: 7px;
+  }
+  
+.input-container > input {
+    padding-left: 30px;
+}
+
+/* .input-container {
+    position:relative;
+    padding:0 0 0 20px;
+    margin:0 20px;
+    background:#ddd;
+    direction: rtl;
+    width: 300px;
+} */
+
+/* .input {
+    height:20px;
+    margin:0;
+    padding-right: 30px;
+} */
+/* .input-img {
+    position:absolute;
+    bottom:2px;
+    right:5px;
+    width:24px;
+    height:24px;
+} */

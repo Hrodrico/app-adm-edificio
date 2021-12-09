@@ -2,6 +2,7 @@ import React from 'react'
 // import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import './ItemListContainer.css';
 
 function ItemListContainer({ categoryId , greeting}) {
     const { idCategory } = useParams();    
@@ -14,7 +15,8 @@ function ItemListContainer({ categoryId , greeting}) {
 
     return (
         <>            
-            <div style={{color:"green", margin:"25px",fontSize: "2rem", alignContent:"center"}}>{greeting}</div>
+            {/* <div style={{color:"green", margin:"25px",fontSize: "2rem", alignContent:"center"}}>{greeting}</div> */}
+            <div className="greeting">{greeting}</div>
             <ItemList categoryId = {categoryId} />
             {/* <ItemCount stock="7" initial="2"/>  */}
         </>

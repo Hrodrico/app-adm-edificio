@@ -22,6 +22,11 @@
     color: #00a160;
 }
 
+.item-button > input {
+    color: #00a160;
+  }
+  
+
 .input {
     flex: 1;
     align-content: 'center';

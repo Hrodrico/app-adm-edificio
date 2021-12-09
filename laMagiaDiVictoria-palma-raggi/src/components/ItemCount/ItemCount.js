@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2'
+import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 // import { BsFillPlusCircleFill } from "react-icons/bs";
 // import { AiOutlineMinusCircle } from "react-icons/ai";
-import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 
 
 function ItemCount ({stock=0, initial=0, onAdd})  {    
@@ -59,7 +59,7 @@ function ItemCount ({stock=0, initial=0, onAdd})  {
 
             <div className="item-section">    
                 <button className="item-button" onClick={handlerCounterDown}><HiOutlineMinus className="icon"/></button>
-                <input type="text" className="input" id="input" defaultValue={initial} value={counter} placeholder="Contador"/>
+                <input type="text" className="input" defaultValue={initial} value={counter} placeholder="Contador"/>
                 <button className="item-button" onClick={handlerCounterUp}><HiOutlinePlusSm className="icon"/></button>
             </div>        
 
