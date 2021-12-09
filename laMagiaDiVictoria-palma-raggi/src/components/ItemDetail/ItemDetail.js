@@ -12,21 +12,20 @@ function ItemDetailContainer({product}) {
     const [itemCard, setItemCard] = useContext(CartContext);
     
     // const { cartAdd } = useCartContext();
-    
     console.log("product::",product);
-
 
     const onAdd = () =>{
         console.log("::Entra onAdd::");
         setButtonFinish(true);
-        const itemFind = itemCard.find((obj) => obj.idDrink === product.idDrink)
-        console.log("itemFind::",itemFind);
-        if(!itemFind)
+        // const itemFind = itemCard.find((obj) => obj.idDrink === product.idDrink)
+        let item = isInCart();
+        console.log("itemFind::",item);
+        if(!item)
             setItemCard ( [ ...itemCard, {...product, qty: 1} ] )
         else
-            setItemCard ( itemCard.map ( (obj) => obj.idDrink === product.idDrink ? {...itemFind, qty: itemFind.qty +1} : obj ) )
+            setItemCard ( itemCard.map ( (obj) => obj.idDrink === product.idDrink ? {...item, qty: item.qty +1} : obj ) )
         
-            // cartAdd(product, qty)
+        // cartAdd(product, qty)
         console.log("itemCard::",itemCard);
         
     };
@@ -36,13 +35,14 @@ function ItemDetailContainer({product}) {
     const onDelete = (qty) =>{
         console.log("::Entra onDelete::");
         setButtonFinish(false);
-        const itemFind = itemCard.find((x) => x.idDrink === product.idDrink)
-        console.log("itemFind::",itemFind);
+        // const itemFind = itemCard.find((x) => x.idDrink === product.idDrink)
+        let item = isInCart();
+        console.log("itemFind::",item);
 
-        if (itemFind.qty === 1) 
+        if (item.qty === 1) 
 			setItemCard (itemCard.filter ((obj) => obj.id !== product.idDrink))
 		else
-            setItemCard (itemCard.map ((obj) => obj.id === product.idDrink ? {...itemFind, qty: itemFind.qty -1} : obj))
+            setItemCard (itemCard.map ((obj) => obj.id === product.idDrink ? {...item, qty: item.qty -1} : obj))
 		
         
             // cartAdd(product, qty)
@@ -53,6 +53,11 @@ function ItemDetailContainer({product}) {
     const onEmpty = () =>{
         setItemCard([]);
         console.log("itemCard::",itemCard)
+    };
+
+    const isInCart = () =>{
+        const itemFind = itemCard.find((obj) => obj.idDrink === product.idDrink)
+        return itemFind;
     };
 
     return (
