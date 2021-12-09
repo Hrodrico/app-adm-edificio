@@ -6,7 +6,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext'
 import './ItemDetail.css';
 
-function ItemDetailContainer({product}) {
+function ItemDetail({product}) {
     const { strDrink, strInstructions, dateModified, idDrink, strDrinkThumb } = product;
     const [buttonFinish, setButtonFinish] = useState(false);
     const [itemCard, setItemCard] = useContext(CartContext);
@@ -20,35 +20,36 @@ function ItemDetailContainer({product}) {
         // const itemFind = itemCard.find((obj) => obj.idDrink === product.idDrink)
         let item = isInCart();
         console.log("itemFind::",item);
-        if(!item)
-            setItemCard ( [ ...itemCard, {...product, qty: 1} ] )
-        else
-            setItemCard ( itemCard.map ( (obj) => obj.idDrink === product.idDrink ? {...item, qty: item.qty +1} : obj ) )
+        console.log("itemCard::",itemCard);
+        
+        // if(!item)
+        //     setItemCard ( [ ...itemCard, {...product, qty: 1} ] )
+        // else
+        //     setItemCard ( itemCard.map ( (obj) => obj.idDrink === product.idDrink ? {...item, qty: item.qty +1} : obj ) )
         
         // cartAdd(product, qty)
-        console.log("itemCard::",itemCard);
         
     };
 
     
 
-    const onDelete = (qty) =>{
-        console.log("::Entra onDelete::");
-        setButtonFinish(false);
-        // const itemFind = itemCard.find((x) => x.idDrink === product.idDrink)
-        let item = isInCart();
-        console.log("itemFind::",item);
+    // const onDelete = (qty) =>{
+    //     console.log("::Entra onDelete::");
+    //     setButtonFinish(false);
+    //     // const itemFind = itemCard.find((x) => x.idDrink === product.idDrink)
+    //     let item = isInCart();
+    //     console.log("itemFind::",item);
 
-        if (item.qty === 1) 
-			setItemCard (itemCard.filter ((obj) => obj.id !== product.idDrink))
-		else
-            setItemCard (itemCard.map ((obj) => obj.id === product.idDrink ? {...item, qty: item.qty -1} : obj))
+    //     if (item.qty === 1) 
+	// 		setItemCard (itemCard.filter ((obj) => obj.id !== product.idDrink))
+	// 	else
+    //         setItemCard (itemCard.map ((obj) => obj.id === product.idDrink ? {...item, qty: item.qty -1} : obj))
 		
         
-            // cartAdd(product, qty)
-        console.log("itemCard::",itemCard);
+    //         // cartAdd(product, qty)
+    //     console.log("itemCard::",itemCard);
         
-    };
+    // };
 
     const onEmpty = () =>{
         setItemCard([]);
@@ -72,11 +73,12 @@ function ItemDetailContainer({product}) {
                     </Card.Content>
                     <Card.Content extra><Icon name='dollar' /><NumberFormat value= {idDrink} displayType={'text'} thousandSeparator={true}/></Card.Content>
                     <Card.Content extra>
-                        { !buttonFinish && <ItemCount stock={6} initial={1} onAdd={onAdd} /> }
+                        {/* { !buttonFinish && <ItemCount stock={6} initial={1} onAdd={onAdd} /> } */}
+                        { !buttonFinish && <ItemCount stock={6} initial={1} /> }
                         { buttonFinish &&
                             <>
                                 <Button content='Agregar Carro' primary onClick={() => setItemCard(onAdd)}/>
-                                <Button content='Eliminar Carro' primary onClick={() => setItemCard(onDelete)}/>
+                                {/* <Button content='Eliminar Carro' primary onClick={() => setItemCard(onDelete)}/> */}
                                 <Button content='Vaciar Carro' primary onClick={() => setItemCard(onEmpty)}/>
                                 <Link to='/cart'><Button content='Finalizar Carro' secondary /></Link>
                             </>
@@ -88,4 +90,4 @@ function ItemDetailContainer({product}) {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetail

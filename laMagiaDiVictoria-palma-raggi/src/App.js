@@ -22,13 +22,13 @@ import logo from './assets/images/magia_di_victoria.png';
 // import billetera from './assets/images/p_billetera.jpeg'
 
 //Context
-import CartContextProvider from './context/CartContext';
+import CartProvider from './context/CartContext';
 
 class App extends Component {
 	render() {
 		return (
 			<>
-				<CartContextProvider>
+				<CartProvider>
 					<Router>
 						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
 						{/* <NavBar/>  */}
@@ -42,7 +42,7 @@ class App extends Component {
 							{/* <ItemDetailContainer uid="11007" /> */}
 						</Routes>
 					</Router>
-				</CartContextProvider>
+				</CartProvider>
 			</>
 		);
 	}

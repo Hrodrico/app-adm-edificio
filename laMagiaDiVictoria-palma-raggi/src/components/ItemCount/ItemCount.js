@@ -5,7 +5,8 @@ import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 // import { AiOutlineMinusCircle } from "react-icons/ai";
 
 
-function ItemCount ({stock=0, initial=0, onAdd})  {    
+// function ItemCount ({stock=0, initial=0, onAdd})  {    
+function ItemCount ({stock=0, initial=0})  {    
     const [counter, setCounter] = useState(initial);
 
     const handlerCounterUp = () => {

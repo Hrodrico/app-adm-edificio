@@ -8,16 +8,16 @@ export const CartContext = createContext()
 // export const useCartContext = () => useContext(CartContext)
 
 //Context Provider
-function CartContextProvider({param}) {
+export const CartProvider = ({ children })  => {
     const [itemCard, setItemCard] = useState([])
    
     console.log("Item:[",itemCard,"]");
 
     return (
         <CartContext.Provider value={{ itemCard, setItemCard }}> 
-            { param }
+            { children }
         </CartContext.Provider>
     )
 }
 
-export default CartContextProvider;
+export default CartProvider;
