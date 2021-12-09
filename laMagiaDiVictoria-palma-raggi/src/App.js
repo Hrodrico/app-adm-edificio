@@ -20,23 +20,27 @@ import logo from './assets/images/magia_di_victoria.png'
 // import hand_spray from './assets/images/p_antibacterial_hand_spray.jpeg'
 // import billetera from './assets/images/p_billetera.jpeg'
 
+//Context
+import CartContextProvider from './context/CartContext'
+
 class App extends Component {
 	render() {
 		return (
 			<>
-				<Router>
-					<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
-					{/* <NavBar/>  */}
-					<NavBar2/>
-					
-					<Routes>
-						<Route exact path='/' element={<Home />} ></Route>
-						<Route exact path='/category/:categoryId' element={<Category />} ></Route>
-						<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
-						<Route exact path='/cart' element={<CartWidget />} ></Route>
-						{/* <ItemDetailContainer uid="11007" /> */}
-					</Routes>
-				</Router>
+				{/* <CartContextProvider> */}
+					<Router>
+						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
+						{/* <NavBar/>  */}
+						<NavBar2/>
+						<Routes>
+							<Route exact path='/' element={<Home />} ></Route>
+							<Route exact path='/category/:categoryId' element={<Category />} ></Route>
+							<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
+							<Route exact path='/cart' element={<CartWidget />} ></Route>
+							{/* <ItemDetailContainer uid="11007" /> */}
+						</Routes>
+					</Router>
+				{/* </CartContextProvider> */}
 			</>
 		);
 	}
