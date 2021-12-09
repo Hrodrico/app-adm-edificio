@@ -8,26 +8,27 @@ import HeaderFloating from './components/Header/Header';
 import NavBar2 from './components/NavBar/NavBar2'; 
 // import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CartWidget from './components/CartWidget/CartWidget'
+import CartWidget from './components/CartWidget/CartWidget';
 
 //Views[MENU]
 import Home from './views/Home';
-import Category from './views/Category'
+import Category from './views/Category';
+import Error from './views/Error';
 
 //Img
-import logo from './assets/images/magia_di_victoria.png'
+import logo from './assets/images/magia_di_victoria.png';
 // import honey_mask from './assets/images/p_honey_mask.jpeg'
 // import hand_spray from './assets/images/p_antibacterial_hand_spray.jpeg'
 // import billetera from './assets/images/p_billetera.jpeg'
 
 //Context
-import CartContextProvider from './context/CartContext'
+import CartContextProvider from './context/CartContext';
 
 class App extends Component {
 	render() {
 		return (
 			<>
-				{/* <CartContextProvider> */}
+				<CartContextProvider>
 					<Router>
 						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
 						{/* <NavBar/>  */}
@@ -37,10 +38,11 @@ class App extends Component {
 							<Route exact path='/category/:categoryId' element={<Category />} ></Route>
 							<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
 							<Route exact path='/cart' element={<CartWidget />} ></Route>
+							<Route path="*" element={<Error />} />
 							{/* <ItemDetailContainer uid="11007" /> */}
 						</Routes>
 					</Router>
-				{/* </CartContextProvider> */}
+				</CartContextProvider>
 			</>
 		);
 	}

@@ -30,14 +30,14 @@ function ItemCount ({stock=0, initial=0, onAdd})  {
         
 	};
 
-    const handlerAddCart = () => {
-		console.log("Btn:: Agregar a carrito");
-        console.log("initial::",initial);
-        console.log("counter::",counter);
-        setCounter(initial)
-        onAdd(counter)
+    // const handlerAddCart = () => {
+	// 	console.log("Btn:: Agregar a carrito");
+    //     console.log("initial::",initial);
+    //     console.log("counter::",counter);
+    //     setCounter(initial)
+    //     onAdd(counter)
         
-	};
+	// };
 
     const Toast = Swal.mixin({
         toast: true,
@@ -63,7 +63,7 @@ function ItemCount ({stock=0, initial=0, onAdd})  {
                 <button className="item-button" onClick={handlerCounterUp}><HiOutlinePlusSm className="icon"/></button>
             </div>        
 
-            { counter > 0 && <button onClick={handlerAddCart}>Agregar a Carro</button> }
+            {/* { counter > 0 && <button onClick={handlerAddCart}>Agregar a Carro</button> } */}
         </div>
         
     )
