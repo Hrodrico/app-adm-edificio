@@ -55,7 +55,7 @@ const ItemList = ({categoryId}) => {
                             products ? (
                                 products.map(product => {
                                     return (
-                                        <Item product={product} />
+                                        <Item product={product} key={product.idDrink}/>
                                     )
                                 })
                             ) : ("No se encontro resultado")
