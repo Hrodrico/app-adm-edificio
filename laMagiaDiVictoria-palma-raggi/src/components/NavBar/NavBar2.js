@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Menu, Dropdown, Segment } from 'semantic-ui-react'
 import { Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 
 class NavBar2 extends Component {
@@ -38,13 +39,8 @@ class NavBar2 extends Component {
             
             <Menu.Menu position='right'>
                 <NavLink to="/cart">
-                    <Menu.Item
-                        name='cart'
-                        active={activeItem === 'cart'}
-                        onClick={this.handleItemClick}
-                    >
-                        <Icon name='cart'/>
-                        Carro
+                    <Menu.Item name='cart' active={activeItem === 'cart'} onClick={this.handleItemClick} >
+                        <CartWidget/> 
                     </Menu.Item>
                 </NavLink>
             </Menu.Menu>

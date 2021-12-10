@@ -9,6 +9,7 @@ function ItemListContainer({ categoryId , greeting}) {
     console.log("ItemListContainer");
     console.log("prop.categoryId:[",categoryId,"]");
     console.log("param.idCategory:[",idCategory,"]");
+    
     if(idCategory){
         categoryId = idCategory;
     }

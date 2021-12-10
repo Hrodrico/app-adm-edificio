@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/CartContext';
 import { FiShoppingCart } from "react-icons/fi";
 
-function CartWidget ({qty}) {
+function CartWidget () {
+    const { cart } = useContext(CartContext);
+
+    console.log('CardWidget => cart', cart);
+
     return (
         <div className="item-contener">
-            <h1>Mi Carro <FiShoppingCart/> </h1>
-            <div>
-                --Productos seleccionados-- 
-                {qty}
-            </div>
-            
+            <FiShoppingCart/> 
         </div>
     )
 }

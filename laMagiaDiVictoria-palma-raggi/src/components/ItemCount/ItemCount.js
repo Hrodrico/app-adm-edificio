@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2'
 import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
-// import { BsFillPlusCircleFill } from "react-icons/bs";
-// import { AiOutlineMinusCircle } from "react-icons/ai";
+import { Button } from 'semantic-ui-react'
 
 
-// function ItemCount ({stock=0, initial=0, onAdd})  {    
-function ItemCount ({stock=0, initial=0})  {    
+
+function ItemCount ({stock=0, initial=0, onAdd})  {    
     const [counter, setCounter] = useState(initial);
 
     const handlerCounterUp = () => {
@@ -31,14 +30,9 @@ function ItemCount ({stock=0, initial=0})  {
         
 	};
 
-    // const handlerAddCart = () => {
-	// 	console.log("Btn:: Agregar a carrito");
-    //     console.log("initial::",initial);
-    //     console.log("counter::",counter);
-    //     setCounter(initial)
-    //     onAdd(counter)
-        
-	// };
+    const handlerAddCart = () => {
+        onAdd(counter)
+	};
 
     const Toast = Swal.mixin({
         toast: true,
@@ -58,15 +52,16 @@ function ItemCount ({stock=0, initial=0})  {
                 Stock Disponible: { stock }
             </div>
 
-            <div className="item-section">    
-                <button className="item-button" onClick={handlerCounterDown}><HiOutlineMinus className="icon"/></button>
+            <div className="item-section">
+                <button className="item-button"  onClick={handlerCounterDown}><HiOutlineMinus className="icon"/></button>
                 <input type="text" className="input" defaultValue={initial} value={counter} placeholder="Contador"/>
-                <button className="item-button" onClick={handlerCounterUp}><HiOutlinePlusSm className="icon"/></button>
+                <button className="item-button"   onClick={handlerCounterUp}><HiOutlinePlusSm className="icon"/></button>
             </div>        
 
-            {/* { counter > 0 && <button onClick={handlerAddCart}>Agregar a Carro</button> } */}
+            <div className="item-section">
+                { counter > 0 && <Button content='Agregar a Carro' primary onClick={handlerAddCart}/> }
+            </div>
         </div>
-        
     )
 }
 
