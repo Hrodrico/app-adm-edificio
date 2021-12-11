@@ -4,11 +4,11 @@ import './App.css';
 
 // Components
 import HeaderFloating from './components/Header/Header';
-// import NavBar from './components/NavBar/NavBar'; 
-import NavBar2 from './components/NavBar/NavBar2'; 
+import NavBar from './components/NavBar/NavBar'; 
 // import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartWidget from './components/CartWidget/CartWidget';
+import Footer from './components/Footer/Footer';
 
 //Views[MENU]
 import Home from './views/Home';
@@ -27,12 +27,11 @@ import CartProvider from './context/CartContext';
 class App extends Component {
 	render() {
 		return (
-			<>
+			<div className="App">
 				<CartProvider>
 					<Router>
 						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
-						{/* <NavBar/>  */}
-						<NavBar2/>
+						<NavBar/> 
 						<Routes>
 							<Route exact path='/' element={<Home />} ></Route>
 							<Route exact path='/category/:categoryId' element={<Category />} ></Route>
@@ -41,9 +40,12 @@ class App extends Component {
 							<Route path="*" element={<Error />} />
 							{/* <ItemDetailContainer uid="11007" /> */}
 						</Routes>
+						<div className="App-footer">
+							<Footer />
+						</div>
 					</Router>
 				</CartProvider>
-			</>
+			</div>
 		);
 	}
 }

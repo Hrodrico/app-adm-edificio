@@ -3,13 +3,20 @@ import { CartContext } from '../../context/CartContext';
 import { FiShoppingCart } from "react-icons/fi";
 
 function CartWidget () {
-    const { cart } = useContext(CartContext);
+    const { itemCard } = useContext(CartContext);
+    console.log('CardWidget.cart::', itemCard);
 
-    console.log('CardWidget => cart', cart);
+    const priceTotal = itemCard.length === 0 ? 0 : itemCard.reduce((previousValue, currentValue, currentIndex) => { return previousValue + currentValue.price}, 0);
+    
+    console.log('CardWidget.priceTotal::', priceTotal);
 
     return (
-        <div className="item-contener">
-            <FiShoppingCart/> 
+        <div className="item-cartWidget">
+            <a href="." className="cartWidget__link">
+                <FiShoppingCart className="icon-cart" />
+                <span className="item-cartWidget-total">{itemCard.length}</span>
+            </a>
+            <span className="item-cartWidget-price">$ {priceTotal === 0 ? '0' : priceTotal}</span>
         </div>
     )
 }

@@ -45,8 +45,8 @@ const ItemList = ({categoryId}) => {
             !done ? (   
                 <div className="loading"><ReactLoading type={"spinningBubbles"} color={"#000"}/> </div>
             ) : (
-                <>
-                    <div className="input-container">
+                <div className="input-container">
+                    <div className="input-search">
                         <Icon name='search' className="icon"/>
                         <input type="text" onChange={activeSearch} value={search} placeholder="Buscar Tequila"/>
                     </div>  
@@ -61,7 +61,7 @@ const ItemList = ({categoryId}) => {
                             ) : ("No se encontro resultado")
                         }
                     </div>
-                </>
+                </div>
             )
             
     )

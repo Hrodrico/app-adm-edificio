@@ -1,20 +1,51 @@
-import './NavBar.css';
+import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-import { Icon } from 'semantic-ui-react';
-import CartWidget from '../CartWidget/CartWidget'
+import { Menu, Dropdown, Segment, Icon } from 'semantic-ui-react'
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css';
 
+class NavBar extends Component {
+  state = { activeItem: 'home' }
 
-const NavBar = () => {
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-	return (
-		<nav className='container'>
-			<NavLink to="/"  className="nav-enlace"><Icon name='home'/>Inicio</NavLink>
-            <NavLink to="/categorys/:categoryId"  className="nav-enlace"><Icon name='boxes'/>Categorias</NavLink>
-            <NavLink to="/category/Cocktail"  className="nav-enlace"><Icon name='glass martini'/>Cocktail</NavLink>
-			<NavLink to="/category/Shot"  className="nav-enlace"><Icon name='glass martini'/>Shot</NavLink>
-			<NavLink to="/carro"  className="nav-enlace"><CartWidget/></NavLink>
-		</nav>
-	);
-};
+  render() {
+    const { activeItem } = this.state
 
-export default NavBar;
+    return (
+      <Segment inverted>
+        <Menu inverted pointing secondary size='tiny'>
+            <NavLink to="/" >
+                <Menu.Item 
+                    name='inicio'
+                    active={activeItem === 'inicio'}
+                    onClick={this.handleItemClick}>
+                    <Icon name='home'/> 
+                    Inicio
+                </Menu.Item>
+            </NavLink>
+
+            <Dropdown item text='Categorias'
+                 active={activeItem === 'Categorias'}
+                 onClick={this.handleItemClick}
+                 >
+                <Dropdown.Menu>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/Cocktail">Cocktail</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/Ordinary Drink">Ordinary Drink</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/Shot">Shot</NavLink></Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+            
+            <Menu.Menu position='right'>
+                <NavLink to="/cart">
+                    <Menu.Item name='cart' active={activeItem === 'cart'} onClick={this.handleItemClick} >
+                        <CartWidget/> 
+                    </Menu.Item>
+                </NavLink>
+            </Menu.Menu>
+        </Menu>
+      </Segment>
+    )
+  }
+}
+export default NavBar
