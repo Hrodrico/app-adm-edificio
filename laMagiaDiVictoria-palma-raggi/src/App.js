@@ -32,14 +32,16 @@ class App extends Component {
 					<Router>
 						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
 						<NavBar/> 
-						<Routes>
-							<Route exact path='/' element={<Home />} ></Route>
-							<Route exact path='/category/:categoryId' element={<Category />} ></Route>
-							<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
-							<Route exact path='/cart' element={<CartWidget />} ></Route>
-							<Route path="*" element={<Error />} />
-							{/* <ItemDetailContainer uid="11007" /> */}
-						</Routes>
+						<div className="App-body">
+							<Routes>
+								<Route exact path='/' element={<Home />} ></Route>
+								<Route exact path='/category/:categoryId' element={<Category />} ></Route>
+								<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
+								<Route exact path='/cart' element={<CartWidget />} ></Route>
+								<Route path="*" element={<Error />} />
+								{/* <ItemDetailContainer uid="11007" /> */}
+							</Routes>
+						</div>
 						<div className="App-footer">
 							<Footer />
 						</div>

@@ -12,10 +12,12 @@ export const CartProvider = ({ item = [], children })  => {
     const [itemCard, setItemCard] = useState(item);
     
     console.log('CartProvider.itemCard:[', item ,']');
+    //Agrega Item al carro
     const itemAdd = (item, qty) => {
         console.log('item', item);
         console.log('quantity', qty);
 
+        //Preguta si existe
         if (!isInCart(item.id)) {
           const objCart = {
             id: item.idDrink,
@@ -28,16 +30,19 @@ export const CartProvider = ({ item = [], children })  => {
           console.log('El producto ya fue agregado al carro');
         }
       }
-    
+      
+      //Elimina Item al carro
       const itemRemove = (itemId) => {
         const newCart = itemCard.filter(product => product.id !== itemId);
         setItemCard(newCart);
       }
     
+      //Limpia carro
       const itemClear = () => {
         setItemCard([]);
       }
     
+      //Existe item en carro
       const isInCart = (id) => {
         if (itemCard.find(product => product.id === id)) 
           return true;

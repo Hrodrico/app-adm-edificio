@@ -5,6 +5,16 @@
 	bottom: 0;
 }
 
+.App-body {
+  display: block;
+  width: 1550px;
+  height: 200px;
+  min-height: 600px;
+  max-height: 600px; 
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 .App-footer {
   height: 100%;
   width: 100%;

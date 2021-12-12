@@ -14,7 +14,7 @@ class NavBar extends Component {
 
     return (
       <Segment inverted>
-        <Menu inverted pointing secondary size='tiny'>
+        <Menu inverted pointing secondary size='large'>
             <NavLink to="/" >
                 <Menu.Item 
                     name='inicio'
