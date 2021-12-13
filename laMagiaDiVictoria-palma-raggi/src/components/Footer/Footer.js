@@ -14,8 +14,8 @@ const Footer = () => {
 			<Card className="footer-container">
 				<Card.Body className="footer-body">
 					<Card.Text className="footer-text">No olvides seguirnos!!!</Card.Text>
-					<a href={`${linkFB}`} target="_blank" rel="noopener noreferrer"><TiSocialFacebook className="footer-social"/></a>
                     <a href={`${linkIG}`} target="_blank" rel="noopener noreferrer"><TiSocialInstagram className="footer-social"/></a>
+					<a href={`${linkFB}`} target="_blank" rel="noopener noreferrer"><TiSocialFacebook className="footer-social"/></a>
 				</Card.Body>
 				<Card.Header className="footer-header">La Magia Di Victoria © Todos los derechos reservados.</Card.Header>
 			</Card>

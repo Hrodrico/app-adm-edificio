@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Table, Image, Segment, Button, Icon } from 'semantic-ui-react'
 import { CartContext } from '../../context/CartContext';
+import NumberFormat from 'react-number-format';
 import './CartDetail.css';
 
 // function CartDetail({ itemCard }) {
@@ -16,7 +17,7 @@ const CartDetail = ({ items }) => {
                         <Table.Body>
                             <Table.Row>
                                 <Table.Cell width={2}>Producto</Table.Cell>
-                                <Table.Cell> <Image src={image} size='medium' circular  centered verticalAlign='middle' />{' '}<span>{name}</span></Table.Cell>
+                                <Table.Cell> <Image src={image} size='tiny' circular  centered verticalAlign='middle' />{' '}<span className="name-card-detail">{name}</span></Table.Cell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell>Descripcion</Table.Cell>
@@ -24,7 +25,7 @@ const CartDetail = ({ items }) => {
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell>Precio Unitario</Table.Cell>
-                                <Table.Cell>{price}</Table.Cell>
+                                <Table.Cell>$ <NumberFormat value= {price} displayType={'text'} thousandSeparator={true}/> </Table.Cell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell>Cantidad</Table.Cell>

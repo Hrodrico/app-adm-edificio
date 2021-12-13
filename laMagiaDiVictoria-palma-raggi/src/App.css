@@ -16,7 +16,7 @@
 /* For Tablets */
 @media screen and (min-width: 540px) and (max-width: 780px) {
   .App-body {
-      width: 600px;
+      width: 550px;
   }
 }
 
