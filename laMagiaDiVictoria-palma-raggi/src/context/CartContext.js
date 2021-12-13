@@ -21,7 +21,9 @@ export const CartProvider = ({ item = [], children })  => {
         if (!isInCart(item.id)) {
           const objCart = {
             id: item.idDrink,
+            image: item.strDrinkThumb,
             name: item.strDrink,
+            description: item.strInstructions,
             price: item.idDrink,
             quantity: qty
           }

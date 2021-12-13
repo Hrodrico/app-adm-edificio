@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2'
 import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 import { Button } from 'semantic-ui-react'
-
+import { Toast } from '../../utils/Swal'
 
 
 function ItemCount ({stock=0, initial=0, onAdd})  {    
@@ -34,17 +33,7 @@ function ItemCount ({stock=0, initial=0, onAdd})  {
         onAdd(counter)
 	};
 
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top', //'top-end',
-        showConfirmButton: false,
-        timer: 4000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
+
 
     return (
         <div className="item-content">            

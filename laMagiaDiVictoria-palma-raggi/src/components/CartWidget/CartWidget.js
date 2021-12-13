@@ -7,12 +7,14 @@ import './CartWidget.css'
 function CartWidget () {
     const { itemCard } = useContext(CartContext);
     console.log('CardWidget.cart::', itemCard);
+    
+    const productQuantity = itemCard.reduce((totalCart, item) => totalCart + item.quantity, 0);
 
     return (
         <div className="item-cartWidget">
-            <a href="." className="item-cartWidget-link">
+            <a href="/cart" className="item-cartWidget-link">
                 <Icon name='cart' className="item-cartWidget-icon" /> 
-                {itemCard.length > 0 &&  <span className="item-cartWidget-total"> { itemCard.length } </span>}
+                {itemCard.length > 0 &&  <span className="item-cartWidget-total"> { productQuantity } </span>}
             </a>
         </div>
     )
