@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {  useContext }  from 'react'
 import './Item.css';
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
 import { NavLink } from 'react-router-dom';
 import { LessText } from '../../utils/fnc'
+import { CartContext } from '../../context/CartContext'
+
 
 function Item({product}) {
     const { strDrink, strInstructions, dateModified, idDrink, strDrinkThumb } = product;
+    const { itemAdd } = useContext(CartContext);
     
+    
+    const handlerAddCart = () => {
+        itemAdd(product, 1);
+	};
     return (
         <>
             {/* <NavLink to={`/item/${idDrink}`}> */}
@@ -23,6 +30,7 @@ function Item({product}) {
                         <Card.Content extra><a href="/"><Icon name='dollar' /><NumberFormat value= {idDrink} displayType={'text'} thousandSeparator={true}/></a>
                         </Card.Content>
                     </Card>
+                    <Button content='AGREGAR' onClick={handlerAddCart} secory><Icon name='cart'/> AGREGAR </Button>
                     <NavLink to={`/item/${idDrink}`}><Button content='VER DETALLE' secory/></NavLink>
                 </div>        
         </>
