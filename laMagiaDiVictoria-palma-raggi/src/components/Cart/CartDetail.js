@@ -33,7 +33,7 @@ const CartDetail = ({ items }) => {
                             </Table.Row>
                             <Table.Row>
                                 <Table.Cell>Acción</Table.Cell>
-                                <Table.Cell><Button  primary onClick={ ()=> itemRemove(id) }><Icon name='trash' /></Button></Table.Cell>
+                                <Table.Cell><Button secondary onClick={()=>itemRemove(id)}><Icon name='trash'/></Button></Table.Cell>
                             </Table.Row>
                         </Table.Body>
                     </Table>
