@@ -9,10 +9,10 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Footer from './components/Footer/Footer';
 
 //Views[MENU]
-import Home from './views/Home';
-import Category from './views/Category';
-import Error from './views/Error';
-import Cart from './views/Cart';
+import HomeView from './views/HomeView';
+import CategoryView from './views/CategoryView';
+import ErrorView from './views/ErrorView';
+import CartView from './views/CartView';
 
 //Img
 import logo from './assets/images/magia_di_victoria.png';
@@ -30,11 +30,11 @@ class App extends Component {
 						<NavBar/> 
 						<div className="App-body">
 							<Routes>
-								<Route exact path='/' element={<Home />} ></Route>
-								<Route exact path='/category/:categoryId' element={<Category />} ></Route>
+								<Route exact path='/' element={<HomeView />} ></Route>
+								<Route exact path='/category/:categoryId' element={<CategoryView />} ></Route>
 								<Route exact path='/item/:id' element={<ItemDetailContainer />} ></Route>
-								<Route exact path='/cart' element={<Cart />} ></Route>
-								<Route path="*" element={<Error />} />
+								<Route exact path='/cart' element={<CartView />} ></Route>
+								<Route path="*" element={<ErrorView />} />
 								{/* <ItemDetailContainer uid="11007" /> */}
 							</Routes>
 						</div>

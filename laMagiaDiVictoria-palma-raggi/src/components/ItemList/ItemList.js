@@ -53,9 +53,9 @@ const ItemList = ({categoryId}) => {
                     <div className="item-list">
                         {
                             products ? (
-                                products.map(product => {
+                                products.map((product, index) => {
                                     return (
-                                        <Item product={product} key={product.idDrink}/>
+                                        <Item product={ product } key={ index }/>
                                     )
                                 })
                             ) : ("No se encontro resultado")

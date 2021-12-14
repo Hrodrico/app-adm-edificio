@@ -2,22 +2,21 @@ import React, { useContext, useState } from 'react';
 import { Divider, Header, Icon, Step, Button, Segment, Grid } from 'semantic-ui-react'
 import { Toast } from '../../utils/Swal'
 import { Link } from "react-router-dom";
-import CartDetail from '../CartDetail/CartDetail'
 import { CartContext } from '../../context/CartContext';
+import CartDetail from '../Cart/CartDetail'
 import NumberFormat from 'react-number-format';
 import './CartConteiner.css'
 
 function CartContainer() {
-    const [ activeOrden, setActiveOrden ] = useState(false);
-    const [ activeTransport, setActiveTransport ] = useState(false);
-    const [ activePaid, setActivePaid ] = useState(false);
-    const [ activeConfirm, setActiveConfirm ] = useState(false);
+    const [ step, setStep ] = useState(1);
     const { itemCard, itemClear } = useContext(CartContext);
 
-    //Precio total de Carro
-    const priceTotal = itemCard.reduce((totalCart, item) => totalCart + item.price * item.quantity, 0)
-    //cantidad de productos en carro
-	const itemsQuantity = itemCard.reduce((totalCart, item) => totalCart + item.quantity,0);
+    /* Price total of Carro */
+    const priceTotal =  itemCard.reduce((totalCart, item) => totalCart + (item.price * item.quantity), 0);
+        
+    /* Quantity of productos in cart */
+	const itemsQuantity = itemCard.reduce((totalCart, item) => totalCart + item.quantity, 0);
+    
 
     if(itemsQuantity === 0){
         return (
@@ -28,21 +27,15 @@ function CartContainer() {
         )
     }
 
-
-    //Msje finalizar compra
-
-    //Msje finalizar compra
+    /* Msge finished buy */
     const getFinalizar = () => {
-        setActiveOrden('completed');
-        setActiveConfirm('active');
+        setStep(4);
         // ThankYouAnimate();
         Toast.fire({
             icon: 'info',
             title: 'Gracias por su compra. <br>Te esperamos pronto!!!'
             })
     }
-
-  
     
     return (
         <>
@@ -59,15 +52,15 @@ function CartContainer() {
                     </Divider>
                     
                     <Step.Group attached='top'>
-                        <Step { ...activeOrden }>
+                        <Step completed = { step > 1 } active = { step === 1 } disabled = { step !== 1 }>
                             <Icon name='shopping bag' />
                             <Step.Content>
                                 <Step.Title>Orden</Step.Title>
-                                <Step.Description>Total Productos Seleccionados: {itemsQuantity} </Step.Description>
+                                <Step.Description>Total Productos Seleccionados: { itemsQuantity } </Step.Description>
                             </Step.Content>
                         </Step>
 
-                        <Step {...activeTransport}>
+                        <Step completed = { step > 2 } active= { step === 2 } disabled = { step !== 2 }>
                             <Icon name='truck' />
                             <Step.Content>
                                 <Step.Title>Transporte</Step.Title>
@@ -75,7 +68,7 @@ function CartContainer() {
                             </Step.Content>
                         </Step>
 
-                        <Step {...activePaid}>
+                        <Step completed = { step > 3 } active = { step === 3 } disabled = { step !== 3 }>
                             <Icon name='payment' />
                             <Step.Content>
                                 <Step.Title>Pago</Step.Title>
@@ -83,7 +76,7 @@ function CartContainer() {
                             </Step.Content>
                         </Step>
 
-                        <Step {...activeConfirm}>
+                        <Step completed = { step > 4 } active = { step === 4 } disabled = { step !== 4 }>
                             <Icon name='info' />
                             <Step.Content>
                                 <Step.Title>Confirmar Orden</Step.Title>
@@ -103,10 +96,9 @@ function CartContainer() {
                         }
                     </Grid.Column>
                     <Grid.Column>
-                        
                         <Segment>
                             <div className="total-cart">
-                                Total: <NumberFormat value= {priceTotal} displayType={'text'} thousandSeparator={true}/>
+                                Total: <NumberFormat value= { priceTotal } displayType={'text'} thousandSeparator={true}/>
                             </div>
                         </Segment>
                         <div className="btn-accion">

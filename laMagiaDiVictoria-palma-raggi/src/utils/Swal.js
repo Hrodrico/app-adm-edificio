@@ -13,12 +13,12 @@ export const Toast = Swal.mixin({
   }
 })
 
-export const ThankYouAnimate = Swal.fire({
-  title: 'Gracias por su compra. <br>Te esperamos pronto!!!',
-  showClass: {
-    popup: 'animate__animated animate__fadeInDown'
-  },
-  hideClass: {
-    popup: 'animate__animated animate__fadeOutUp'
-  }
-})
+// export const ThankYouAnimate = Swal.fire({
+//   title: 'Gracias por su compra. <br>Te esperamos pronto!!!',
+//   showClass: {
+//     popup: 'animate__animated animate__fadeInDown'
+//   },
+//   hideClass: {
+//     popup: 'animate__animated animate__fadeOutUp'
+//   }
+// })
