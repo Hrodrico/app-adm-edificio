@@ -26,8 +26,10 @@ class App extends Component {
 			<div className="App">
 				<CartProvider>
 					<Router>
-						<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
-						<NavBar/> 
+						<div className="App-header">
+							<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
+							<NavBar/> 
+						</div>
 						<div className="App-body">
 							<Routes>
 								<Route exact path='/' element={<HomeView />} ></Route>

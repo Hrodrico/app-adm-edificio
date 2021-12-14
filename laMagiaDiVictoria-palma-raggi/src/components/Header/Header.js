@@ -7,7 +7,6 @@ const HeaderFloating = ({imgBusiness, nameBusiness}) => (
   <Segment clearing>
     <Link to="/"> 
     <Header as='h4' floated='left'>
-      
         <Image className="logo" src={imgBusiness} />{nameBusiness}
     </Header>
       </Link>
