@@ -19,7 +19,7 @@ const ItemList = ({categoryId}) => {
             setSearch(categoryId);
         }
         
-        setTimeout(() => {
+        // setTimeout(() => {
             //Consume API en enviroment
             fetch(`${API}${search}`)
                 .then(response => response.json())
@@ -33,7 +33,7 @@ const ItemList = ({categoryId}) => {
                     console.error('Error: ', error);
                     throw error;
                 })
-        }, 1000)
+        // }, 0)
     }, [search]) 
 
     const activeSearch = (event) => {

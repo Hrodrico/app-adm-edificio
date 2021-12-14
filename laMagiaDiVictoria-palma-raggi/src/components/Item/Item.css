@@ -1,7 +1,8 @@
 .item {
     margin-top: 20px;
-    border: 1px solid grey;
-    display: flex;
+    /* border: 1px solid grey; */
+    display: absolute;
 	justify-content: center;
-	margin: 20px;
+    align-items: center;
+	margin: 35px;
 }

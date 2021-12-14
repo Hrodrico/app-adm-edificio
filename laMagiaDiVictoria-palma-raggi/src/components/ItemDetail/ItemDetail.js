@@ -19,6 +19,7 @@ function ItemDetail({ product }) {
         itemAdd(product, qty);
     };
 
+
     return (
         <>
             <div className='item-detail'>
