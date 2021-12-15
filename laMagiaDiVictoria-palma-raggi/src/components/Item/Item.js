@@ -3,8 +3,8 @@ import './Item.css';
 import { Card, Icon, Image, Button, Label } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
 import { NavLink } from 'react-router-dom';
-import { LessText } from '../../utils/fnc'
-import { CartContext } from '../../context/CartContext'
+import { LessText } from '../../utils/Fnc';
+import { CartContext } from '../../context/CartContext';
 
 
 function Item({product}) {

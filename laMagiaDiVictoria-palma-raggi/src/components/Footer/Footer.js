@@ -17,7 +17,7 @@ const Footer = () => {
                     <a href={`${linkIG}`} target="_blank" rel="noopener noreferrer"><TiSocialInstagram className="footer-social"/></a>
 					<a href={`${linkFB}`} target="_blank" rel="noopener noreferrer"><TiSocialFacebook className="footer-social"/></a>
 				</Card.Body>
-				<Card.Header className="footer-header">La Magia Di Victoria © Todos los derechos reservados.</Card.Header>
+				<Card.Header className="footer-header"> ® La Magia Di Victoria © Todos los derechos reservados. </Card.Header>
 			</Card>
 		</div>
 	);
