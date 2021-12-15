@@ -38,9 +38,14 @@ class NavBar extends Component {
             
             <Menu.Menu position='right'>
                 <NavLink to="/cart">
-                    <Menu.Item name='cart' active={activeItem === 'cart'} onClick={this.handleItemClick} >
+                    {/* <Menu.Item name='cart' active={activeItem === 'cart'} onClick={this.handleItemClick} >
                         <CartWidget/> 
-                    </Menu.Item>
+                    </Menu.Item> */}
+                      <Menu.Item as='a'>
+                        {/* <Icon name='cart' />  */}
+                        <CartWidget/> 
+                        
+                      </Menu.Item>
                 </NavLink>
             </Menu.Menu>
         </Menu>
