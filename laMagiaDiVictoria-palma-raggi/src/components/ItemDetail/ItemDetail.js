@@ -9,7 +9,7 @@ import './ItemDetail.css';
 function ItemDetail({ product }) {
     const [buttonFinish, setButtonFinish] = useState(false);
     const { itemAdd } = useContext(CartContext);
-    const { img, name, description, price, stock, category } = product;
+    const { img, name, description, price, stock, category } = product[0];
     
     console.log("1ItemDetail.product::",product);
 

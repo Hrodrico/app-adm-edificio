@@ -5,7 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import "./ItemDetailContainer.css";
 
 //Firebase
-import { getDocs, collection, query } from "firebase/firestore";
+import { collection, query, getDocs, where, documentId } from "firebase/firestore";
 import { db } from '../../firebase/FirebaseConfig'
 
 function ItemDetailContainer() {
@@ -13,38 +13,18 @@ function ItemDetailContainer() {
     const [done , setDone] = useState(undefined);
     const paramsId = useParams();
 
-    //ENV
-    // const API = process.env.REACT_APP_API_URL_ITEM; 
-    // useEffect(() => {
-    //     // Delay 2 seg. por consigna
-    //     setTimeout(() => {
-    //         //Consume API en enviroment
-    //         fetch(`${API}${idDrink}`)
-    //             .then(response => response.json())
-    //             .then(json => {
-    //                 // console.log("json::",json.drinks);
-    //                 console.log("json::",json.drinks[0]);
-    //                 setProducts(json.drinks[0]);
-    //                 setDone(true);
-    //             })
-    //             .catch((error) => {
-    //                 console.error('Error: ', error);
-    //                 throw error;
-    //             })
-    //     }, 2000)
-    // }, []) 
     
     //Filtra id por params 
-    const itemDetailFilter = products.filter((obj) => {
-        return obj.id === paramsId.id}
-    )
+    // const itemDetailFilter = products.filter((obj) => {
+    //     return obj.id === paramsId.id}
+    // )
 
-    console.log("itemDetailFilter::",itemDetailFilter);
+    // console.log("itemDetailFilter::",itemDetailFilter);
 
     //Hooks getProducts invoca Firebase
     useEffect(() => {
 		const getProducts = async () => {
-			const q = query(collection(db, "product"))
+			const q = query(collection(db, "product"), where(documentId(), '==', paramsId.id));
 			const docs = []
 			const querySnapshot = await getDocs(q)
 			querySnapshot.forEach((doc) => {
@@ -67,8 +47,8 @@ function ItemDetailContainer() {
                     <div className="ItemDetailContainer" >
                         { 
                             Object.keys(products).length > 0 ? (
-                                itemDetailFilter.map((products) => {
-                                return <ItemDetail key={products.id} product={products} />
+                                products.map((prod) => {
+                                return <ItemDetail key={prod.id} product={products} />
                             })
                             ) : ("No se encontro producto") 
                         }

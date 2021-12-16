@@ -32,7 +32,7 @@ class NavBar extends Component {
                 <Dropdown.Menu>
                     <Dropdown.Item><NavLink className="navlink" to="/category/accesorios">Bolsos y Accesorios</NavLink></Dropdown.Item>
                     <Dropdown.Item><NavLink className="navlink" to="/category/lociones">Cuidado Corporal</NavLink></Dropdown.Item>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/fragancia">Fragancia</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/belleza">Vestimenta y Lenceria</NavLink></Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
             
