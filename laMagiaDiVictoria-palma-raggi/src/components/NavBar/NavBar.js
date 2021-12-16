@@ -14,7 +14,7 @@ class NavBar extends Component {
 
     return (
       <Segment inverted>
-        <Menu inverted pointing secondary size='large'>
+        <Menu inverted pointing secondary size='large' className = 'container-navbar'>
             <NavLink to="/" >
                 <Menu.Item 
                     name='inicio'
@@ -30,9 +30,9 @@ class NavBar extends Component {
                  onClick={this.handleItemClick}
                  >
                 <Dropdown.Menu>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/Cocktail">Cocktail</NavLink></Dropdown.Item>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/Ordinary Drink">Ordinary Drink</NavLink></Dropdown.Item>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/Shot">Shot</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/accesorios">Bolsos y Accesorios</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/lociones">Cuidado Corporal</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink className="navlink" to="/category/fragancia">Fragancia</NavLink></Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
             

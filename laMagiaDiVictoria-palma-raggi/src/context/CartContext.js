@@ -20,11 +20,12 @@ export const CartProvider = ({ item = [], children })  => {
         //Preguta si existe
         if (!isInCart(item.id)) {
           const objCart = {
-            id: item.idDrink,
-            image: item.strDrinkThumb,
-            name: item.strDrink,
-            description: item.strInstructions,
-            price: item.idDrink,
+            id: item.id,
+            image: item.img,
+            name: item.name,
+            description: item.description,
+            price: item.price,
+            stock: item.stock,
             quantity: qty
           }
           setItemCard(itemCard.concat(objCart));

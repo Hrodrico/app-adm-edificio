@@ -7,9 +7,9 @@ import { CartContext } from '../../context/CartContext'
 import './ItemDetail.css';
 
 function ItemDetail({ product }) {
-    const { strDrink, strInstructions, dateModified, idDrink, strDrinkThumb } = product;
     const [buttonFinish, setButtonFinish] = useState(false);
     const { itemAdd } = useContext(CartContext);
+    const { img, name, description, price, stock, category } = product;
     
     console.log("1ItemDetail.product::",product);
 
@@ -19,18 +19,17 @@ function ItemDetail({ product }) {
         itemAdd(product, qty);
     };
 
-
     return (
         <>
             <div className='item-detail'>
                 <Card>
-                    <Image src={strDrinkThumb} wrapped ui={false} />
+                    <Image src={img} wrapped ui={false} />
                     <Card.Content>
-                        <Card.Header>{strDrink}</Card.Header>
-                        <Card.Meta>{dateModified}</Card.Meta>
-                        <Card.Description>{strInstructions}</Card.Description>
+                        <Card.Header>{name}</Card.Header>
+                        <Card.Meta>Stock: {stock} / { category }</Card.Meta>
+                        <Card.Description>{description}</Card.Description>
                     </Card.Content>
-                    <Card.Content extra><Icon name='dollar' /><NumberFormat value= {idDrink} displayType={'text'} thousandSeparator={true}/></Card.Content>
+                    <Card.Content extra><Icon name='dollar' /><NumberFormat value={ price } displayType={'text'} thousandSeparator={true}/></Card.Content>
                 </Card>
             </div>
 

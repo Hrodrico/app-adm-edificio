@@ -1,8 +1,9 @@
 .container {
-	display: flex;	
-	background-color:black;
-    justify-content: center;
-    padding: 10px;
+	/* display: flex;	 */
+    width: ;
+	/* background-color:black; */
+    /* justify-content: center; */
+    /* padding: 10px; */
 }
 
 .container ul {

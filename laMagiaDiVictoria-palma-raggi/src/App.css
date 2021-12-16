@@ -77,27 +77,23 @@
 }
 
 /* New CSS DarkMode */
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body.light-mode {
   background-color: #fff;
-  color: #333;
+  color:  #fff;
   transition: background-color 0.3s ease;
 }
 
 body.dark-mode {
   background-color: #10171d;
-  color: #dfdfdf;
+  color: #10171d;
 
-  .navbar {
-    background-color: #1b2938;
-  }
+  
 
   .dark-mode-toggle > button {
     color: #999;

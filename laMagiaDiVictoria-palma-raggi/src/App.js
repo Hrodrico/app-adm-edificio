@@ -20,6 +20,8 @@ import logo from './assets/images/magia_di_victoria.png';
 //Context
 import CartProvider from './context/CartContext';
 
+
+
 class App extends Component {
 	render() {
 		return (
