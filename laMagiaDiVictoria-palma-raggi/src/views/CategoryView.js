@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 function Category() {
     const { categoryId } = useParams();
-    const greet = process.env.REACT_APP_GREETING; 
+    const greet = process.env.REACT_APP_GREETING;
     console.log(":::categoryId:::",categoryId);
 
     return (

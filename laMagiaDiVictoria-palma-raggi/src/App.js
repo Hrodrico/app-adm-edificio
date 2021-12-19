@@ -15,7 +15,8 @@ import ErrorView from './views/ErrorView';
 import CartView from './views/CartView';
 
 //Img
-import logo from './assets/images/magia_di_victoria.png';
+// import logo from './assets/images/logos/magia_di_victoria.png';
+import logo from '@/images/logos/magia_di_victoria.png';
 
 //Context
 import CartProvider from './context/CartContext';
@@ -29,7 +30,7 @@ class App extends Component {
 				<CartProvider>
 					<Router>
 						<div className="App-header">
-							<HeaderFloating imgBusiness={logo} nameBusiness="La Magia Di Victoria"/>				
+							<HeaderFloating imgBusiness={ logo } />
 							<NavBar/> 
 						</div>
 						<div className="App-body">
