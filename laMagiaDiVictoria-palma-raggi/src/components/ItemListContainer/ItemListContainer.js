@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Message, Icon } from 'semantic-ui-react'
+import { Message, Icon, Input } from 'semantic-ui-react'
 import ReactLoading from 'react-loading'; 
-import ItemList from '../ItemList/ItemList';
+import ItemList from 'components/ItemList/ItemList';
 import './ItemListContainer.css';
 
 //Firebase
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDocs, collection, query, where, orderBy, startAt, endAt } from "firebase/firestore";
 import { db } from "../../firebase/FirebaseConfig"
 
 function ItemListContainer({ categoryId , greeting}) {
@@ -13,6 +13,7 @@ function ItemListContainer({ categoryId , greeting}) {
     const [visible, setVisible] = useState(true);
     const [search, setSearch] = useState('');
     const [done , setDone] = useState(undefined);
+    const refProduct = collection(db, "product");
 
 
     const handleDismiss = () => {
@@ -24,7 +25,7 @@ function ItemListContainer({ categoryId , greeting}) {
 
     useEffect(() => {
 		const getProducts = async () => {
-			const qry = categoryId ? query(collection(db, "product"), where("category", "==", categoryId)) : collection(db, "product")
+			const qry = categoryId ? query(refProduct, where("category", "==", categoryId)) : collection(db, "product")
 			const docs = []
 			const querySnapshot = await getDocs(qry)
 			querySnapshot.forEach((doc) => {
@@ -38,7 +39,9 @@ function ItemListContainer({ categoryId , greeting}) {
 
      useEffect(() => {
          const getProducts = async () => {
-			const qry = search ? query(collection(db, "product"), where("name", "==", search)) : collection(db, "product")
+            //  const qry = search ? query(collection(db, 'product').orderBy('name').startAt('name').endAt('name'+'\uf8ff')) : collection(db, "product")
+			// const qry = search ? query(ref, where("name", "==", search)) : collection(db, "product")
+            const qry = search ? query(refProduct, orderBy('name'), startAt(search), endAt(search+'\uf8ff')) : collection(db, "product")
 			const docs = []
 			const querySnapshot = await getDocs(qry)
 			querySnapshot.forEach((doc) => {
@@ -66,10 +69,8 @@ function ItemListContainer({ categoryId , greeting}) {
                             header={greeting}
                             content='Esta es una notificación especial que puede descartar.'
                         />
-                    </div>) : (
-                    <div className="greeting">
-                        El mensaje regresará en 15s...
-                    </div>
+                    </div>) : (""
+                    // <div className="greeting">El mensaje regresará en 15s...</div>
                 )
             }
             {
@@ -78,8 +79,9 @@ function ItemListContainer({ categoryId , greeting}) {
                 ) : (
                     <div className="input-container">
                         <div className="input-search">
-                            <Icon name='search' className="icon"/>
-                            <input type="text" onChange={activeSearch} value={search} placeholder="Busqueda de Producto"/>
+                            {/* <Icon name='search' className="icon"/> */}
+                            {/* <input type="text" onChange={activeSearch} value={search} placeholder="Buscar..."/> */}
+                            <Input type="text" onChange={activeSearch} value={search} icon={{ name: 'search', circular: true }} iconPosition='left' placeholder="Buscar..."/>
                         </div>  
                         <div className="item-container">
                             <ItemList products={product} />

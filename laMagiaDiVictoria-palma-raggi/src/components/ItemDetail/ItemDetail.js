@@ -2,8 +2,8 @@ import React, { useState, useContext }  from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
-import ItemCount from '../ItemCount/ItemCount';
-import { CartContext } from '../../context/CartContext'
+import ItemCount from 'components/ItemCount/ItemCount';
+import { CartContext } from 'context/CartContext'
 import './ItemDetail.css';
 
 function ItemDetail({ product }) {
@@ -12,11 +12,12 @@ function ItemDetail({ product }) {
     const { img, name, description, price, stock, category } = product[0];
     
     console.log("1ItemDetail.product::",product);
+    console.log("1ItemDetail.product[0]::",product[0]);
 
     const onAdd = (qty) =>{
         console.log("onAdd.product::",product);
         setButtonFinish(true);
-        itemAdd(product, qty);
+        itemAdd(product[0], qty);
     };
 
     return (

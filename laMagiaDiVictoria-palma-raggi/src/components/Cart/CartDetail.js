@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Table, Image, Segment, Button, Icon } from 'semantic-ui-react'
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from 'context/CartContext';
 import NumberFormat from 'react-number-format';
 import './CartDetail.css';
 

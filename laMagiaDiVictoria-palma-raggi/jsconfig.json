@@ -3,10 +3,10 @@
         "baseUrl": "src",
         "target": "es6",
         "paths": {
-            "@/components": ["./src/components"],
-            "@/views": ["./src/views"],
-            "@/utils": ["./src/utils"],
-            "@/images": ["./src/assets/images"]
+            "@/components": ["src/components/*"],
+            "@/views": ["src/views/*"],
+            "@/utils": ["src/utils/*"],
+            "@/images": ["src/assets/images/*"]
           }
     },
     "exclude": ["node_modules"],

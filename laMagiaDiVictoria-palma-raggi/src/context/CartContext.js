@@ -8,8 +8,9 @@ export const CartContext = createContext([])
 // export const useCartContext = () => useContext(CartContext)
 
 //Context Provider
-export const CartProvider = ({ item = [], children })  => {
+export const CartProvider = ({ item = [], children, steped=1 })  => {
     const [itemCard, setItemCard] = useState(item);
+    const [step, setStep] = useState(steped);
     
     console.log('CartProvider.itemCard:[', item ,']');
     //Agrega Item al carro
@@ -53,11 +54,15 @@ export const CartProvider = ({ item = [], children })  => {
           return false;
       }
 
+      const setterStep = (step) =>{
+        setStep(step);
+      }
+
     console.log("children:[",children,"]");
     console.log("Item:[",itemCard,"]");
 
     return (
-        <CartContext.Provider value={{ itemCard, itemAdd, itemRemove, itemClear, isInCart }}>
+        <CartContext.Provider value={{ itemCard, itemAdd, itemRemove, itemClear, isInCart, step, setterStep }}>
             { children }
         </CartContext.Provider>
     )

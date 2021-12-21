@@ -1,10 +1,10 @@
 import React, {  useContext }  from 'react'
-import './Item.css';
 import { Card, Icon, Image, Button, Label } from 'semantic-ui-react'
 import NumberFormat from 'react-number-format';
 import { NavLink } from 'react-router-dom';
-import { LessText } from '../../utils/Fnc';
-import { CartContext } from '../../context/CartContext';
+import { LessText } from 'utils/Fnc';
+import { CartContext } from 'context/CartContext';
+import './Item.css';
 
 
 function Item({product}) {

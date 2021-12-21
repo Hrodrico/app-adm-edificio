@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header, Segment, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
-import DarkModeToggle from '../../utils/DarkModeToggle';
+import DarkModeToggle from 'utils/DarkModeToggle';
 
 const HeaderFloating = ({ imgBusiness }) => {
   const nameBusiness = process.env.REACT_APP_NAME_BUSINESS;

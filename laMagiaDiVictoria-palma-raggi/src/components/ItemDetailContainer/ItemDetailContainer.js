@@ -6,7 +6,7 @@ import "./ItemDetailContainer.css";
 
 //Firebase
 import { collection, query, getDocs, where, documentId } from "firebase/firestore";
-import { db } from '../../firebase/FirebaseConfig'
+import { db } from 'firebase/FirebaseConfig'
 
 function ItemDetailContainer() {
     const [products, setProducts] = useState({});
@@ -24,7 +24,8 @@ function ItemDetailContainer() {
     //Hooks getProducts invoca Firebase
     useEffect(() => {
 		const getProducts = async () => {
-			const q = query(collection(db, "product"), where(documentId(), '==', paramsId.id));
+            const refProduct = collection(db, "product");
+			const q = query(refProduct, where(documentId(), '==', paramsId.id));
 			const docs = []
 			const querySnapshot = await getDocs(q)
 			querySnapshot.forEach((doc) => {

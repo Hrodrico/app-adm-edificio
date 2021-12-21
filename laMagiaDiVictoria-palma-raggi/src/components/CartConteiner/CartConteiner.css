@@ -23,3 +23,41 @@
 .step-cart-container{
 	font-size: 0.8rem;
 }
+
+
+.title-cart{
+    font-family: "Arial Black" ;
+    font-size: 1.3em;
+	color:#000000;
+}
+
+.subtotal-cart{
+    font-family: "Arial Bold", sans-serif; 
+    font-size: 1.1em;
+	color:#000000;
+}
+
+
+.price-subtotal-cart{
+    font-family: "Arial Bold", sans-serif; 
+    font-size: 1.1em;
+	color:#000000;
+}
+
+.total-cart{
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 1.1em;
+	color:#000000;
+    
+    
+}
+
+
+.price-total-cart{
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 1.1em;
+	color:#000000;
+}
+

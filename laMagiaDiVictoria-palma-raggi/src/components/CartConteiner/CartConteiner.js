@@ -1,22 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { Divider, Header, Icon, Step, Button, Segment, Grid } from 'semantic-ui-react'
-import { Toast } from '../../utils/Swal'
+import React, { useContext } from 'react';
+import { Divider, Header, Icon, Step, Button, Segment } from 'semantic-ui-react'
+
 import { Link } from "react-router-dom";
-import { CartContext } from '../../context/CartContext';
-import CartDetail from '../Cart/CartDetail'
-import NumberFormat from 'react-number-format';
+import { CartContext } from 'context/CartContext';
+// import CartDetail from 'components/Cart/CartDetail'
+// import CartDetail from '@/components/Cart/CartDetail'
+// import NumberFormat from 'react-number-format';
+ import CartReviewOrder from 'components/CartReviewOrder/CartReviewOrder'
+ import CartTransport from 'components/CartTransport/CartTransport'
+ import CartResumenOrder from 'components/CartResumenOrder/CartResumenOrder'
+
 import './CartConteiner.css'
 
 function CartContainer() {
-    const [ step, setStep ] = useState(1);
-    const { itemCard, itemClear } = useContext(CartContext);
+    // const [ step, setStep ] = useState(1);
+    const { itemCard,  step, setterStep  } = useContext(CartContext);
 
     /* Price total of Carro */
-    const priceTotal =  itemCard.reduce((totalCart, item) => totalCart + (item.price * item.quantity), 0);
+    // const priceTotal =  itemCard.reduce((totalCart, item) => totalCart + (item.price * item.quantity), 0);
         
     /* Quantity of productos in cart */
 	const itemsQuantity = itemCard.reduce((totalCart, item) => totalCart + item.quantity, 0);
-    
 
     if(itemsQuantity === 0){
         return (
@@ -27,14 +31,23 @@ function CartContainer() {
         )
     }
 
-    /* Msge finished buy */
-    const getFinalizar = () => {
-        setStep(4);
-        // ThankYouAnimate();
-        Toast.fire({
-            icon: 'info',
-            title: 'Gracias por su compra. <br>Te esperamos pronto!!!'
-            })
+  
+
+  
+
+    function renderSwitch(param) {
+        switch(param) {
+            case 1:
+                return <CartReviewOrder steping={param}/>;
+            case 2:
+                return <CartTransport steping={param}/>;
+            case 3:
+                return 'bar';
+            case 4:
+                return <CartResumenOrder/>
+            default:
+                return <CartReviewOrder steping={1}/>;
+        }
     }
     
     return (
@@ -50,12 +63,11 @@ function CartContainer() {
                     <Divider horizontal>
                         <Header as='h4'><Icon name='align justify' />Proceso de Compra</Header>
                     </Divider>
-                    
                     <Step.Group attached='top'>
                         <Step completed = { step > 1 } active = { step === 1 } disabled = { step !== 1 }>
                             <Icon name='shopping bag' />
                             <Step.Content>
-                                <Step.Title>Orden</Step.Title>
+                                <Step.Title>Confirmar Orden</Step.Title>
                                 <Step.Description>Total Productos Seleccionados: { itemsQuantity } </Step.Description>
                             </Step.Content>
                         </Step>
@@ -79,34 +91,13 @@ function CartContainer() {
                         <Step completed = { step > 4 } active = { step === 4 } disabled = { step !== 4 }>
                             <Icon name='info' />
                             <Step.Content>
-                                <Step.Title>Confirmar Orden</Step.Title>
+                                <Step.Title>Resumen Orden</Step.Title>
                             </Step.Content>
                         </Step>
                     </Step.Group>
+                    { renderSwitch(step) }
                 </div>
-                <Divider horizontal>
-                    <Header as='h4'><Icon name='shopping bag' />Revisión del Pedido</Header>
-                </Divider>
-                <Grid columns={2} relaxed='very' >
-                    <Grid.Column>
-                        {
-                            itemCard.map((item) => {
-                                return <CartDetail key={item.id} items={item} />
-                            })
-                        }
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Segment>
-                            <div className="total-cart">
-                                Total: <NumberFormat value= { priceTotal } displayType={'text'} thousandSeparator={true}/>
-                            </div>
-                        </Segment>
-                        <div className="btn-accion">
-                                <Button content='Vaciar carro' secondary onClick={ itemClear }/>
-                                <Button content='Finalizar Compra' primary onClick={ getFinalizar }/>
-                        </div>
-                    </Grid.Column>
-                </Grid>
+                
             </Segment>
         </>
     )

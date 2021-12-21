@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { HiOutlinePlusSm, HiOutlineMinus } from 'react-icons/hi';
 import { Button } from 'semantic-ui-react'
-import { Toast } from '../../utils/Swal'
+import { Toast } from 'utils/Swal'
 
 
 function ItemCount ({stock=0, initial=0, onAdd})  {    

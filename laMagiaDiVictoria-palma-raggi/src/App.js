@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import 'App.css';
 
 // Components
-import HeaderFloating from './components/Header/Header';
-import NavBar from './components/NavBar/NavBar'; 
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Footer from './components/Footer/Footer';
+import HeaderFloating from 'components/Header/Header';
+import NavBar from 'components/NavBar/NavBar'; 
+import ItemDetailContainer from 'components/ItemDetailContainer/ItemDetailContainer';
+import Footer from 'components/Footer/Footer';
 
 //Views[MENU]
-import HomeView from './views/HomeView';
-import CategoryView from './views/CategoryView';
-import ErrorView from './views/ErrorView';
-import CartView from './views/CartView';
+import HomeView from 'views/HomeView';
+import CategoryView from 'views/CategoryView';
+import ErrorView from 'views/ErrorView';
+import CartView from 'views/CartView';
 
 //Img
-// import logo from './assets/images/logos/magia_di_victoria.png';
-import logo from '@/images/logos/magia_di_victoria.png';
+import logo from './assets/images/logos/magia_di_victoria.png';
+// import logo from '@/images/logos/magia_di_victoria.png';
 
 //Context
-import CartProvider from './context/CartContext';
+import CartProvider from 'context/CartContext';
+// import CartProvider from './context/CartContext';
 
 
 

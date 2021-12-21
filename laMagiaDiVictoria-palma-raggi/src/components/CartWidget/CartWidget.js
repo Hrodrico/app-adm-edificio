@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from 'context/CartContext';
 import { Label } from 'semantic-ui-react'
 // import { FiShoppingCart } from "react-icons/fi";
 import {  Icon } from 'semantic-ui-react'

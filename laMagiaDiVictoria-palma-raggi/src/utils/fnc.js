@@ -24,9 +24,9 @@ export function LessText({ text, maxLength }) {
         <span>
             {hidden ? `${text.substr(0, maxLength).trim()} ...` : text}
             {hidden ? (
-                    <a onClick={() => setHidden(false)}> Read more...</a>
+                    <a onClick={() => setHidden(false)}> Más..</a>
                 ) : (
-                    <a onClick={() => setHidden(true)}> Read less</a>
+                    <a onClick={() => setHidden(true)}> Menos</a>
             )}
         </span>
     );
