@@ -10,7 +10,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "firebase/FirebaseConfig"
 
 function CartTransport() {
-    const objClient = { name: '', lastName: '', email: '', repeatEmail: '', address: '' };
+    const objClient = { name: '', lastName: '', email: '', repeatEmail: '', address: '', termsOfService: false };
     const { itemCard, itemClear, setterStep } = useContext(CartContext);
     const [buyId, setBuyId] = useState('');
     const [buyedProducts, setBuyedProducts] = useState({...itemCard});
@@ -19,10 +19,11 @@ function CartTransport() {
         initialValues: objClient,
         validationSchema: Yup.object({
             name: Yup.string().required("El nombre es obligatorio"),
-            lastName: Yup.string().required("El apellido es obligatorio"),
+            lastName: Yup.string().min(2, 'El apellido es no válido, es pequeño.').max(70, 'El apellido es no válido, es largo.').required("El apellido es obligatorio"),
             email: Yup.string().email("No es un e-mail valido").required("El e-mail es obligatorio"),
             repeatEmail: Yup.string().email("No es un e-mail valido").required("El reingreso e-mail es obligatorio").oneOf([Yup.ref("email")],"E-mail no son iguales "),
             address: Yup.string().required("La dirección es obligatorio"),
+            // termsOfService: Yup.boolean().required("Para continuar debe aceptar los terminos y condiciones").oneOf([true], "Deben aceptarse los términos y condiciones.")
         }),
         onSubmit:(formData)=>{
             console.log("formData::",formData);
@@ -59,6 +60,7 @@ function CartTransport() {
 
     return (
         <div>
+            {console.log("Formik.errors",Formik.errors)}
             <Divider horizontal>
                     <Header as='h4'><Icon name='plane' />Revisión del Transporte</Header>
             </Divider>
@@ -88,6 +90,9 @@ function CartTransport() {
                     <Form.Input type='text' placeholder='Dirección' name='address' onChange={Formik.handleChange}   value={Formik.values.address} error={Formik.errors.address} />
                     <Label pointing>Favor, ingrese Dirección</Label>
                 </Form.Field>
+                {/* <Form.Field>
+                    <Form.Checkbox type='checkbox'  label='Estoy de acuerdo con los términos y condiciones.' {...Formik.getFieldProps("termsOfService")} name='termsOfService'  value={Formik.values.termsOfService}  error={Formik.errors.termsOfService}/>
+                </Form.Field> */}
                 <Button content='Volver' secondary onClick={ getReviewOrder} />
 				<Button content='Limpiar' secondary onClick={ Formik.handleReset } />
                 <Button content='Finalizar Compra' primary type="submit"/>
