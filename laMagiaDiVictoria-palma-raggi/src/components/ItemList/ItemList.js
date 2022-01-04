@@ -3,11 +3,13 @@ import Item from 'components/Item/Item';
 import './ItemList.css';
 
 const ItemList = ({products}) => {
+
+    console.log("ItemList.products::",products);
     return (
         <div className="input-container">
             <div className="item-list">
                 {
-                    products ? (
+                    Object.keys(products).length ? (
                         products.map((product, index) => {
                             return (
                                 <Item product={ product } key={ index }/>

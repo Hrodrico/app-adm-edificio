@@ -11,6 +11,8 @@ function Item({product}) {
     const { itemAdd } = useContext(CartContext);
     const { id, img, name, description, price, stock, category } = product;
     
+    console.log("product:",product);
+    
     const handlerAddCart = () => {
         itemAdd(product, 1);
 	};

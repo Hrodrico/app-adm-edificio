@@ -29,10 +29,11 @@ class NavBar extends Component {
                  active={activeItem === 'Categorias'}
                  onClick={this.handleItemClick}
                  >
+                
                 <Dropdown.Menu>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/accesorios">Bolsos y Accesorios</NavLink></Dropdown.Item>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/lociones">Cuidado Corporal</NavLink></Dropdown.Item>
-                    <Dropdown.Item><NavLink className="navlink" to="/category/belleza">Vestimenta y Lenceria</NavLink></Dropdown.Item>
+                  <div className="navLink"><Dropdown.Item><NavLink to="/category/accesorios">Bolsos y Accesorios</NavLink></Dropdown.Item></div>
+                  <div className="navLink"><Dropdown.Item><NavLink to="/category/lociones">Cuidado Corporal</NavLink></Dropdown.Item></div>
+                  <div className="navLink"><Dropdown.Item><NavLink to="/category/belleza">Vestimenta y Lenceria</NavLink></Dropdown.Item></div>
                 </Dropdown.Menu>
             </Dropdown>
             

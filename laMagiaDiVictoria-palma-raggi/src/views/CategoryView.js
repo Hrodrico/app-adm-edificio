@@ -11,7 +11,7 @@ function Category() {
         <>
             {/* <ItemListContainer greeting="Bienvenid@!!!" categoryId={params.Id}/> */}
             
-            <h1>{categoryId}</h1>
+            {/* <h1>{categoryId}</h1> */}
             <ItemListContainer categoryId={categoryId} greeting={greet}/>
 
         </>

@@ -6,9 +6,6 @@ import "./Footer.css"
 const Footer = () => {
     const linkFB = process.env.REACT_APP_FACEBOOK; 
     const linkIG = process.env.REACT_APP_INSTAGRAM; 
-  
-    console.log("linkFB:",linkFB)
-    console.log("linkIG:",linkIG)
 	return (
 		<div>
 			<Card className="footer-container">
