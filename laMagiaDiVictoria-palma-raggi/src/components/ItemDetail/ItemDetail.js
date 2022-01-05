@@ -11,11 +11,7 @@ function ItemDetail({ product }) {
     const { itemAdd } = useContext(CartContext);
     const { img, name, description, price, stock, category } = product[0];
     
-    console.log("1ItemDetail.product::",product);
-    console.log("1ItemDetail.product[0]::",product[0]);
-
     const onAdd = (qty) =>{
-        console.log("onAdd.product::",product);
         setButtonFinish(true);
         itemAdd(product[0], qty);
     };

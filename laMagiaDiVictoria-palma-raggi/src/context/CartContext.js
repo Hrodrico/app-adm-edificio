@@ -8,17 +8,22 @@ export const CartContext = createContext([])
 // export const useCartContext = () => useContext(CartContext)
 
 //Context Provider
-export const CartProvider = ({ item = [], children, steped=1 })  => {
+export const CartProvider = ({ item = [], children, steped=1, OrderPay='' })  => {
     const [itemCard, setItemCard] = useState(item);
     const [step, setStep] = useState(steped);
+    const [purchaseOrder, setPurchaseOrder] = useState(OrderPay);
     
-    console.log('CartProvider.itemCard:[', item ,']');
-    //Agrega Item al carro
-    const itemAdd = (item, qty) => {
-        console.log('item', item);
-        console.log('quantity', qty);
+    // console.log('CartProvider.itemCard:[', item ,']');
 
-        //Preguta si existe
+    /*********/
+    /* Cart  */
+    /*********/
+    /* Add Item at carro */
+    const itemAdd = (item, qty) => {
+        // console.log('item', item);
+        // console.log('quantity', qty);
+
+        /* Question if exits */
         if (!isInCart(item.id)) {
           const objCart = {
             id: item.id,
@@ -35,18 +40,18 @@ export const CartProvider = ({ item = [], children, steped=1 })  => {
         }
       }
       
-      //Elimina Item al carro
+      /* Delete Item of cart */
       const itemRemove = (itemId) => {
         const newCart = itemCard.filter(product => product.id !== itemId);
         setItemCard(newCart);
       }
     
-      //Limpia carro
+      /* Clean cart */
       const itemClear = () => {
         setItemCard([]);
       }
     
-      //Existe item en carro
+      /* Exist item on cart */
       const isInCart = (id) => {
         if (itemCard.find(product => product.id === id)) 
           return true;
@@ -54,15 +59,25 @@ export const CartProvider = ({ item = [], children, steped=1 })  => {
           return false;
       }
 
-      const setterStep = (step) =>{
+      /*********/
+      /* Step */
+      /*********/
+      const stepUpdate = (step) =>{
         setStep(step);
       }
 
-    console.log("children:[",children,"]");
-    console.log("Item:[",itemCard,"]");
+      /******************/
+      /* Purchase Order */
+      /******************/
+      const purchaseOrderAdd = (idPay) => {
+        setPurchaseOrder(idPay);
+      }
+
+    // console.log("children:[",children,"]");
+    // console.log("Item:[",itemCard,"]");
 
     return (
-        <CartContext.Provider value={{ itemCard, itemAdd, itemRemove, itemClear, isInCart, step, setterStep }}>
+        <CartContext.Provider value={{ itemCard, itemAdd, itemRemove, itemClear, isInCart, step, stepUpdate, purchaseOrder, purchaseOrderAdd}}>
             { children }
         </CartContext.Provider>
     )

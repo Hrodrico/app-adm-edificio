@@ -9,7 +9,7 @@ const CartDetail = ({ items }) => {
     const { itemRemove } = useContext(CartContext);
     const { id, image, name, description, price, quantity, } = items;
 
-    console.log("CartDetail.item:",items);
+    // console.log("CartDetail.item:",items);
     return (
         <div className="card-detail">
             <Segment attached>

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ReactLoading from 'react-loading'; 
 import ItemDetail from '../ItemDetail/ItemDetail'
 import ErrorView from 'views/ErrorView';
+//Css
 import "./ItemDetailContainer.css";
 
 //Firebase

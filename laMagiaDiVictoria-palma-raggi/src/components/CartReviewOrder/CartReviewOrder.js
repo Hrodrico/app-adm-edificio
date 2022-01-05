@@ -5,15 +5,15 @@ import NumberFormat from 'react-number-format';
 import { CartContext } from 'context/CartContext';
 
 
-function CartReviewOrder({steping}) {
-    const { itemCard, itemClear, setterStep } = useContext(CartContext);
+function CartReviewOrder() {
+    const { itemCard, itemClear, stepUpdate } = useContext(CartContext);
 
     /* Price total of Carro */
     const priceTotal =  itemCard.reduce((totalCart, item) => totalCart + (item.price * item.quantity), 0);
 
     
     const getTransporte = () => {
-        setterStep(2);
+        stepUpdate(2);
     }
 
     return (

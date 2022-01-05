@@ -1,23 +1,17 @@
 import React, { useContext } from 'react';
 import { Divider, Header, Icon, Step, Button, Segment } from 'semantic-ui-react'
-
 import { Link } from "react-router-dom";
 import { CartContext } from 'context/CartContext';
-// import CartDetail from 'components/Cart/CartDetail'
-// import CartDetail from '@/components/Cart/CartDetail'
-// import NumberFormat from 'react-number-format';
+//Components
  import CartReviewOrder from 'components/CartReviewOrder/CartReviewOrder'
  import CartTransport from 'components/CartTransport/CartTransport'
  import CartResumenOrder from 'components/CartResumenOrder/CartResumenOrder'
-
+ import CartPay from 'components/CartPay/Cartpay';
+//Css
 import './CartConteiner.css'
 
 function CartContainer() {
-    // const [ step, setStep ] = useState(1);
-    const { itemCard,  step, setterStep  } = useContext(CartContext);
-
-    /* Price total of Carro */
-    // const priceTotal =  itemCard.reduce((totalCart, item) => totalCart + (item.price * item.quantity), 0);
+    const { itemCard,  step } = useContext(CartContext);
         
     /* Quantity of productos in cart */
 	const itemsQuantity = itemCard.reduce((totalCart, item) => totalCart + item.quantity, 0);
@@ -31,22 +25,18 @@ function CartContainer() {
         )
     }
 
-  
-
-  
-
     function renderSwitch(param) {
         switch(param) {
             case 1:
-                return <CartReviewOrder steping={param}/>;
+                return <CartReviewOrder />;
             case 2:
-                return <CartTransport steping={param}/>;
+                return <CartTransport />;
             case 3:
-                return 'bar';
+                return <CartPay />;
             case 4:
-                return <CartResumenOrder/>
+                return <CartResumenOrder />;
             default:
-                return <CartReviewOrder steping={1}/>;
+                return <CartReviewOrder />;
         }
     }
     

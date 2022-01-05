@@ -49,15 +49,37 @@
     font-weight: bold;
     font-size: 1.1em;
 	color:#000000;
-    
-    
 }
-
 
 .price-total-cart{
     font-family: "Arial";
     font-weight: bold;
     font-size: 1.1em;
+	color:#000000;
+}
+
+/* CartResumenOrder */
+.cart-resumen-order-title{
+    margin-bottom: 1em;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 2.1em;
+	color:#000000;
+}
+
+
+.cart-resumen-order-thanks{
+    margin-bottom: 1em;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 1.4em;
+	color:#000000;
+}
+
+.cart-resumen-order-detail, .cart-resumen-order-detail{
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 1.2em;
 	color:#000000;
 }
 
