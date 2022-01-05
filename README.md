@@ -1,8 +1,8 @@
-# App La Magia Di Victoria ⚛️ 🌎
+# App La Magia Di Victoria ⚛️ 
 
 _Final delivery project for the ReactJs course on the Coderhouse platform._
 
-## Site Flow 🔥
+## Site Flow 🌎
 _In this project, it is an e-commerce application for a Chilean SME called La Magia di Victoria that sells Victoria's Secret products purchased directly from Miami. The project is responsive and was built using React Js and npm libraries_  
 
 ## Build with 🛠️
