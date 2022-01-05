@@ -10,7 +10,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "firebase/FirebaseConfig"
 
 function CartPay() {
-    const objClient = { nameTitular: '', creditCard: '', lastDate: '', verificationCode: 0, quotes: 0 };
+    const objClient = { nameTitular: '', creditCard: '', lastDate: '', verificationCode: '', quotes: 0 };
     const { itemCard, itemClear, stepUpdate, purchaseOrder, purchaseOrderAdd } = useContext(CartContext);
     const [buyId, setBuyId] = useState('');
     const [orderPay, setOrderPay] = useState({...itemCard});
@@ -89,7 +89,7 @@ function CartPay() {
                         <Form.Input fluid type='text' required label='Código Verificación' placeholder=' Ingrese Código Verificación' name='verificationCode'  onChange={Formik.handleChange}  value={Formik.values.verificationCode}  error={Formik.errors.verificationCode} />
                 </Form.Group>
                 <Divider />
-                <Form.Select fluid label='Ingrese Cuotas' required placeholder='Ingrese Cuotas' options={quotesNumber} onChange={Formik.handleChange}  error={Formik.errors.quotes} />
+                <Form.Select fluid label='Ingrese Cuotas' required placeholder='Ingrese Cuotas' options={quotesNumber} onChange={Formik.handleChange}  error={Formik.errors.quotes} value={Formik.values.quotes} />
                 <Button content='Volver' secondary onClick={ getStepTransport} />
 				<Button content='Limpiar' secondary onClick={ Formik.handleReset } />
                 <Button content='Finalizar Compra' primary type="submit"/>
