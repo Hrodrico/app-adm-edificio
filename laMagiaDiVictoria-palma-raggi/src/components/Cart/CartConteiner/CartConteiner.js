@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Divider, Header, Icon, Step, Button, Segment } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 import { CartContext } from 'context/CartContext';
+
 //Components
- import CartReviewOrder from 'components/CartReviewOrder/CartReviewOrder'
- import CartTransport from 'components/CartTransport/CartTransport'
- import CartResumenOrder from 'components/CartResumenOrder/CartResumenOrder'
- import CartPay from 'components/CartPay/Cartpay';
+ import CartReviewOrder from 'components/Cart/CartReviewOrder/CartReviewOrder'
+ import CartTransport from 'components/Cart/CartTransport/CartTransport'
+ import CartResumenOrder from 'components/Cart/CartResumenOrder/CartResumenOrder'
+ import CartPay from 'components/Cart/CartPay/Cartpay';
+ 
 //Css
 import './CartConteiner.css'
 

@@ -85,7 +85,7 @@ function CartPay() {
                 <Form.Input fluid type='text' required label='Nombre Titular' placeholder='Ingrese Nombre Titular' name='nameTitular' onChange={Formik.handleChange}  value={Formik.values.nameTitular} error={Formik.errors.nameTitular} />
                 <Form.Group widths='equal'>
                         <Form.Input fluid type='text' required label='Número Tarjeta' placeholder='Ingrese Número Tarjeta' name='creditCard'  onChange={Formik.handleChange}  value={Formik.values.creditCard}  error={Formik.errors.creditCard} />
-                        <Form.Input fluid type='text' required label='Fecha Expiración' placeholder='Ingrese Fecha Expiración' name='lastDate'  onChange={Formik.handleChange}  value={Formik.values.lastDate}  error={Formik.errors.lastDate} />
+                        <Form.Input fluid type='month' required label='Fecha Expiración' placeholder='Ingrese Fecha Expiración' name='lastDate'  onChange={Formik.handleChange}  value={Formik.values.lastDate}  error={Formik.errors.lastDate} />
                         <Form.Input fluid type='text' required label='Código Verificación' placeholder=' Ingrese Código Verificación' name='verificationCode'  onChange={Formik.handleChange}  value={Formik.values.verificationCode}  error={Formik.errors.verificationCode} />
                 </Form.Group>
                 <Divider />

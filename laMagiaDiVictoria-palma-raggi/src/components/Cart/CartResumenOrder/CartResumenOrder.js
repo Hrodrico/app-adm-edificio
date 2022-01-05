@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { List, Header, Divider, Icon, Item, Table, Image, Button } from 'semantic-ui-react'
 import { CartContext } from 'context/CartContext';
 import NumberFormat from 'react-number-format';
+
 //Css
-import '../CartConteiner/CartConteiner.css'
+import 'components/Cart/CartConteiner/CartConteiner.css'
 
 //Firebase
 import { collection, query, getDocs, where, documentId } from "firebase/firestore";

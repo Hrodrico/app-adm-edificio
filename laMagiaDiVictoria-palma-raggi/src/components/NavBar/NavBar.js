@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Segment, Icon } from 'semantic-ui-react'
-import CartWidget from 'components/CartWidget/CartWidget';
+import CartWidget from 'components/Cart/CartWidget/CartWidget';
 import './NavBar.css';
 
 class NavBar extends Component {
